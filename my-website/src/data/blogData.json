@@ -47,8 +47,7 @@
     "finalThoughtsDetail": "Rebuilding my personal website in React (and deploying on Vercel) was the best way to see my own progress as a developer. Now I have a platform that’s easy to maintain, fun to improve, and shows my skills as they grow.",
 
     "links": [
-      { "label": "See the site", "url": "https://your-vercel-site-url/" },
-      { "label": "Source on GitHub", "url": "https://github.com/yourusername/personal-website" }
+      { "label": "Source on GitHub", "url": "https://github.com/joywong1228/Personal_Website_With_React" }
     ]
   },
   {
@@ -95,7 +94,7 @@
     "finalThoughtsDetail": "AstroTracker is still early, but already a rewarding blend of math, design, and dev. If you’re curious about space, React Native, or just want to follow the stars, this project is for you. ⭐ You don’t need an API key to look at the sky.",
 
     "links": [
-      { "label": "Source on GitHub", "url": "https://github.com/yourusername/astrotracker" }
+      { "label": "Source on GitHub", "url": "https://github.com/joywong1228/astrotracker" }
     ]
   }
 ]
