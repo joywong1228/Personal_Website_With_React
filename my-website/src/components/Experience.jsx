@@ -1,86 +1,60 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaJs, FaPython } from "react-icons/fa";
-import checkmark from "../assets/checkmark.png";
-import flutter from "../assets/flutter.png";
-import arrow from "../assets/arrow.png";
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaGitAlt, FaNodeJs, FaDatabase, FaCode
+} from "react-icons/fa";
+import { SiFlutter, SiMongodb, SiMysql, SiFirebase } from "react-icons/si";
+import { TbBrandTypescript } from "react-icons/tb";
+import { IoLogoVercel } from "react-icons/io5";
 
-function Experience() {
+const frontendSkills = [
+  { name: "HTML5", icon: <FaHtml5 />, color: "#E44D26", level: "Experienced" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "#2965F1", level: "Experienced" },
+  { name: "JavaScript", icon: <FaJs />, color: "#F0DB4F", level: "Experienced" },
+  { name: "TypeScript", icon: <TbBrandTypescript />, color: "#2f74c0", level: "Intermediate" },
+  { name: "React", icon: <FaReact />, color: "#61DBFB", level: "Intermediate" },
+  { name: "Flutter", icon: <SiFlutter />, color: "#49C5F6", level: "Basic" },
+  { name: "Java", icon: <FaJava />, color: "#ea2d2e", level: "Basic" },
+];
+
+const backendSkills = [
+  { name: "Python", icon: <FaPython />, color: "#3572A5", level: "Intermediate" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#3C873A", level: "Basic" },
+  { name: "C#", icon: <FaCode />, color: "#512bd4", level: "Basic" },
+  { name: "MySQL", icon: <SiMysql />, color: "#005e86", level: "Intermediate" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#4DB33D", level: "Basic" },
+  { name: "Firebase", icon: <SiFirebase />, color: "#ffcc30", level: "Basic" },
+  { name: "Git", icon: <FaGitAlt />, color: "#f14e32", level: "Intermediate" },
+  { name: "Vercel", icon: <IoLogoVercel />, color: "#000", level: "Basic" },
+  { name: "SQL", icon: <FaDatabase />, color: "#4479A1", level: "Intermediate" },
+];
+
+export default function Experience() {
   return (
-    <section id="experience">
-      <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Experience</h1>
-      <div className="experience-details-container">
-        <div className="about-containers">
-          <div className="details-container">
-            <h2 className="experience-sub-title">Frontend Development</h2>
-            <div className="article-container">
-              <article>
-                <FaHtml5 size={36} color="#E44D26" className="icon" />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <FaCss3Alt size={36} color="#2965F1" className="icon" />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <FaJs size={36} color="#F0DB4F" className="icon" />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img src={flutter} alt="Flutter" className="icon" style={{width: 36}} />
-                <div>
-                  <h3>Flutter</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div className="details-container">
-            <h2 className="experience-sub-title">Backend Development</h2>
-            <div className="article-container">
-              <article>
-                <FaPython size={36} color="#3572A5" className="icon" />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src={checkmark} alt="C#" className="icon" style={{width: 36}} />
-                <div>
-                  <h3>C#</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img src={checkmark} alt="Git" className="icon" style={{width: 36}} />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src={checkmark} alt="Other" className="icon" style={{width: 36}} />
-                <div>
-                  <h3>--</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
+    <section id="experience" className="exp-section">
+      <h1 className="exp-title">Experience</h1>
+      <div className="exp-cards-row">
+        <SkillBox title="Frontend Development" skills={frontendSkills} />
+        <SkillBox title="Backend & DevOps" skills={backendSkills} />
       </div>
-      <img src={arrow} alt="Arrow icon" className="icon arrow" onClick={() => window.location.href = "#projects"} />
     </section>
   );
 }
-export default Experience;
+
+function SkillBox({ title, skills }) {
+  return (
+    <div className="exp-skill-box">
+      <h2 className="exp-box-title">{title}</h2>
+      <div className="exp-skill-cards">
+        {skills.map((skill) => (
+          <div className="exp-skill-card" key={skill.name}>
+            <span className="exp-skill-bigicon" style={{ color: skill.color }}>
+              {skill.icon}
+            </span>
+            <div className="exp-skill-label">{skill.name}</div>
+            <div className="exp-skill-level">{skill.level}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
