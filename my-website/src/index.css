@@ -268,3 +268,121 @@ section {
     min-width: unset;
   }
 }
+
+/* hambuger */
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-desktop-right {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-desktop-right > .nav-links,
+  .nav-desktop-right > .ThemeToggle {
+    display: none;
+  }
+  .hamburger-btn {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+/* Hamburger mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 22, 28, 0.58);
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: flex-end;
+  animation: overlay-fadein 0.22s;
+}
+[data-theme="light"] .mobile-menu-overlay {
+  background: rgba(246, 248, 250, 0.70);
+}
+@keyframes overlay-fadein {
+  from { background: rgba(20, 22, 28, 0); }
+  to   { background: rgba(20, 22, 28, 0.58); }
+}
+
+.mobile-menu {
+  background: var(--color-bg-alt);
+  width: 78vw;
+  max-width: 320px;
+  height: 100vh;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: -8px 0 32px rgba(9, 211, 224, 0.14);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateX(100%);
+  animation: menu-slidein 0.24s cubic-bezier(.79,-0.07,.36,1.18) forwards;
+  border-top-left-radius: 1.4rem;
+  border-bottom-left-radius: 1.4rem;
+}
+@keyframes menu-slidein {
+  from { transform: translateX(100%);}
+  to   { transform: translateX(0);}
+}
+.mobile-menu .close-btn {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 2.3rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.7rem;
+  cursor: pointer;
+  transition: color 0.17s;
+}
+.mobile-menu .close-btn:hover {
+  color: #fff;
+}
+.mobile-menu ul {
+  list-style: none;
+  margin-top: 4.2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.mobile-menu li {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.mobile-menu a {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px rgba(9,211,224,0.12);
+  transition: color 0.15s, text-shadow 0.17s;
+}
+.mobile-menu a:hover {
+  color: #fff;
+  text-shadow: 0 0 24px var(--color-accent);
+}
+.mobile-menu .ThemeToggle {
+  margin-top: 2.7rem;
+  align-self: center;
+}
+
+/* ThemeToggle */
+.desktop-only {
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
