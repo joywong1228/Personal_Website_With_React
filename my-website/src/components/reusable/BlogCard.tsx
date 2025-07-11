@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import hook
+import { useNavigate } from "react-router-dom";
 
 const tagColor = (tag) => {
   switch (tag.toLowerCase()) {
@@ -37,6 +37,7 @@ export default function BlogCard({
 
   return (
     <div
+      className="blog-card"
       style={{
         display: "flex",
         background: "var(--color-bg-alt)",
@@ -47,13 +48,15 @@ export default function BlogCard({
         gap: "2.2rem",
         minHeight: 140,
         position: "relative",
+        flexDirection: "row",
       }}
     >
       {/* Thumbnail */}
       <div
+        className="blog-card-img"
         style={{
           width: 128,
-          height: 250,
+          height: 140,
           minWidth: 128,
           borderRadius: 16,
           background: "#23253633",
@@ -74,7 +77,7 @@ export default function BlogCard({
         )}
       </div>
       {/* Main content */}
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           <span
             style={{
@@ -115,13 +118,12 @@ export default function BlogCard({
             ))}
           </div>
         </div>
-        {/* Section rows, compact */}
         <div
           style={{
             fontSize: "1.06rem",
             marginTop: 8,
             color: "var(--color-text)",
-            marginBottom: 32, // space for button
+            marginBottom: 32,
           }}
         >
           <div style={{ marginBottom: "0.6rem" }}>
@@ -139,12 +141,9 @@ export default function BlogCard({
             {challenge}
           </div>
         </div>
-        {/* More details button */}
         <button
+          className="blog-card-btn"
           style={{
-            position: "absolute",
-            right: 38,
-            bottom: 24,
             padding: "7px 23px",
             borderRadius: "25px",
             background: "var(--color-accent)",
@@ -155,12 +154,40 @@ export default function BlogCard({
             cursor: "pointer",
             boxShadow: "0 1px 6px #0cfcc032",
             letterSpacing: 0.2,
+            marginTop: 10,
+            position: "relative",
           }}
           onClick={() => navigate(`/blog/${id}`)}
         >
           More details…
         </button>
       </div>
+
+      {/* Responsive (override flex on small screens) */}
+      <style>
+        {`
+        @media (max-width: 700px) {
+          .blog-card {
+            flex-direction: column !important;
+            padding: 1.2rem 1rem !important;
+            align-items: flex-start !important;
+            min-height: unset !important;
+            gap: 1.1rem !important;
+          }
+          .blog-card-img {
+            width: 100% !important;
+            height: 148px !important;
+            min-width: unset !important;
+            margin-bottom: 0.9rem;
+          }
+          .blog-card-btn {
+            width: 100%;
+            position: static !important;
+            margin-top: 1.1rem;
+          }
+        }
+        `}
+      </style>
     </div>
   );
 }
