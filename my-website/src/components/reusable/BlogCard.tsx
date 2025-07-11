@@ -74,7 +74,7 @@ export default function BlogCard({
           <b>Challenge:</b> <span>{challenge}</span>
         </div>
         <button
-          className="blog-card-btn"
+          className="btn btn-color-1 blog-card-btn"
           onClick={() => navigate(`/blog/${id}`)}
         >
           More details…
