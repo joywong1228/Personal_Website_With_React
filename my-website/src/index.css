@@ -318,8 +318,9 @@ section {
 
 .mobile-menu {
   background: var(--color-bg-alt);
-  width: 78vw;
-  max-width: 320px;
+  width: 58vw;
+  max-width: 220px;
+  min-width: 180px;
   height: 100vh;
   padding: 2.5rem 2rem 2rem 2rem;
   box-shadow: -8px 0 32px rgba(9, 211, 224, 0.14);
@@ -385,4 +386,61 @@ section {
   .desktop-only {
     display: none;
   }
+}
+
+/* profiel page */
+.tech-stack-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.tech-icon-btn .icon,
+.tech-stack-icons .icon {
+  transition: color 0.15s, filter 0.17s, transform 0.12s;
+}
+.tech-icon-btn:hover .icon {
+  color: #00c8d6;
+  filter: drop-shadow(0 0 8px #00eaff);
+  transform: scale(1.18) rotate(-6deg);
+}
+.quick-stats {
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrap on overflow */
+  font-size: 1.18rem;
+  color: #10e6e6;
+  margin: 1.3rem 0 1rem 0;
+  font-family: 'Fira Mono', monospace;
+}
+
+.quick-stats span {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.15rem;
+}
+
+/* Responsive: Reduce font and gap on mobile */
+@media (max-width: 700px) {
+  .quick-stats {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .quick-stats span {
+    font-size: 0.99rem;
+  }
+}
+.currently-learning {
+  margin-top: 0.8rem;
+  font-size: 0.99rem;
+  color: #666;
+  font-style: italic;
+}
+.dot {
+  color: var(--color-accent);
+  margin: 0 6px;
+  font-weight: bold;
 }
