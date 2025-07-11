@@ -1,0 +1,101 @@
+[
+  {
+    "id": "personal-website",
+    "title": "Personal Website with React",
+    "skills": ["React", "Vercel", "CSS", "UI/UX"],
+    "previewImg": "/projectimg/website-preview.png",
+    "published": "2025-06-15",
+    "techStack": "React, Vercel, CSS, UI/UX",
+    "duration": "3 weeks for current MVP, rebuilt from older HTML version",
+
+    "intro": "Rebuilt my old HTML site using React for easier updates and a fresh look.",
+    "introDetail": "Building a new personal website to better showcase my skills and projects. My old static HTML page was hard to maintain, limited in design, and looked outdated. I wanted to apply what I learned from recent semesters to make something modern, with easier content updates and a better personal brand.",
+
+    "goal": "Modernize my site with React and Vercel, mobile friendly, modular.",
+    "goalDetail": [
+      "Make a site that’s easy to update, mobile friendly, and visually engaging.",
+      "Learn React best practices and real deployment workflow.",
+      "Switch from static HTML to maintainable, modular code."
+    ],
+
+    "motivation": "Old site was outdated—needed a portfolio that reflects my growth.",
+    "motivationDetail": "My old static HTML page was hard to maintain, limited in design, and looked outdated. I wanted to apply what I learned from recent semesters to make something modern, with easier content updates and a better personal brand.",
+
+    "challenge": "Debugging blank page from a broken icon import, Vercel asset issues.",
+    "challengeDetail": [
+      "Debugging blank pages (broken icon imports, missing assets)",
+      "Vercel deployment quirks (public vs src/assets for images, routing issues)",
+      "State management for theme toggling",
+      "Responsive design on desktop and mobile"
+    ],
+
+    "insights": "React/JSON makes updates fast, deploying motivates better documentation.",
+    "insightsDetail": [
+      "Building from scratch is much easier with React than old static HTML",
+      "Real hosting (Vercel) motivates better code and documentation",
+      "JSON-driven content (for blogs, menus, etc.) makes updates much faster"
+    ],
+
+    "next": "Add languages, animations, and interactive project demos.",
+    "nextDetail": [
+      "Add multi-language support for global visitors",
+      "Improve animations and section transitions",
+      "Integrate more interactive elements (e.g., live projects, demo links)"
+    ],
+
+    "finalThoughts": "Rebuilding my site showed me how far I’ve come as a developer.",
+    "finalThoughtsDetail": "Rebuilding my personal website in React (and deploying on Vercel) was the best way to see my own progress as a developer. Now I have a platform that’s easy to maintain, fun to improve, and shows my skills as they grow.",
+
+    "links": [
+      { "label": "See the site", "url": "https://your-vercel-site-url/" },
+      { "label": "Source on GitHub", "url": "https://github.com/yourusername/personal-website" }
+    ]
+  },
+  {
+    "id": "astro-tracker",
+    "title": "AstroTracker – A Minimalist Mobile Star Map",
+    "skills": ["React Native", "Expo", "SVG", "Astronomy"],
+    "previewImg": "/assets/project/astro-preview.png",
+    "published": "2025-05-22",
+    "techStack": "React Native (Expo), react-native-svg, expo-location",
+    "duration": "Ongoing (MVP in ~3 days)",
+
+    "intro": "A simple, offline star map built with React Native and Expo.",
+    "introDetail": "AstroTracker is my first step into building a mobile astronomy tool that’s simple, educational, and completely offline. Most stargazing apps feel bloated or locked behind paywalls, so I decided to make my own lightweight, open alternative.",
+
+    "goal": "Visualize real stars/constellations using live device location.",
+    "goalDetail": [
+      "Build a lightweight star map that works offline",
+      "Use the device’s location to plot visible stars from Earth",
+      "Draw constellations and stars using react-native-svg"
+    ],
+
+    "motivation": "Wanted a hands-on way to combine coding and astronomy.",
+    "motivationDetail": "As someone fascinated by space and new to mobile dev, I wanted a project that blended both. Most apps just dump facts—I wanted to *visualize* the sky, and learn React Native in the process.",
+
+    "challenge": "Celestial projection, SVG layout, navigation quirks.",
+    "challengeDetail": [
+      "RA/Dec projection: Mapping celestial coordinates to 2D screens isn’t trivial",
+      "Device location: Permission handling, accuracy, and live rendering"
+    ],
+
+    "insights": "MVPs are more satisfying, and React Native is powerful.",
+    "insightsDetail": [
+      "Small, focused MVPs are more satisfying than big, vague ideas",
+      "Astronomy data is surprisingly accessible (Hipparcos, Tycho-2 are public!)"
+    ],
+
+    "next": "Add zoom, constellation lines, camera overlay.",
+    "nextDetail": [
+      "Dynamic star projection (use time & observer heading)",
+      "Zoom and pan controls for SVG sky"
+    ],
+
+    "finalThoughts": "Already rewarding: code, design, and learning in one project.",
+    "finalThoughtsDetail": "AstroTracker is still early, but already a rewarding blend of math, design, and dev. If you’re curious about space, React Native, or just want to follow the stars, this project is for you. ⭐ You don’t need an API key to look at the sky.",
+
+    "links": [
+      { "label": "Source on GitHub", "url": "https://github.com/yourusername/astrotracker" }
+    ]
+  }
+]

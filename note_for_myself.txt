@@ -1,3 +1,8 @@
 git add .
 git commit -m "message"
 git push
+
+
+things to do
+1. the icon in the profile page and experience will lead to related proj
+2. each proj should have its only blog

@@ -1,0 +1,214 @@
+import React from "react";
+import { useParams } from "react-router-dom";
+import blogData from "../../data/blogData.json"; // path to your JSON file
+
+function BlogDetail() {
+  const { id } = useParams();
+  const blog = blogData.find((item) => item.id === id);
+
+  if (!blog) {
+    return (
+      <section style={{ textAlign: "center", margin: "4rem auto" }}>
+        <h2 style={{ color: "var(--color-title)" }}>Blog Not Found</h2>
+        <p>This blog post does not exist.</p>
+      </section>
+    );
+  }
+
+  // Utility to render array or string as lines
+  const renderSection = (data) =>
+    Array.isArray(data) ? (
+      <ul style={{ margin: "0.4rem 0 0.7rem 1.2rem", color: "#555" }}>
+        {data.map((line, i) => (
+          <li key={i} style={{ marginBottom: 6 }}>
+            {line}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div style={{ margin: "0.4rem 0 0.7rem 0" }}>{data}</div>
+    );
+
+  return (
+    <section
+      style={{
+        maxWidth: 900,
+        margin: "3rem auto",
+        background: "var(--color-bg-alt)",
+        borderRadius: "1.5rem",
+        boxShadow: "0 6px 32px rgba(25,103,210,0.11)",
+        padding: "2.5rem 2.2rem",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+        {blog.previewImg && (
+          <div
+            style={{
+              width: 160,
+              height: 104,
+              minWidth: 120,
+              borderRadius: 18,
+              overflow: "hidden",
+              marginRight: 32,
+              boxShadow: "0 1px 16px #09d3e033",
+            }}
+          >
+            <img
+              src={blog.previewImg}
+              alt="Project preview"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+        )}
+        <div style={{ flex: 1 }}>
+          <h1
+            style={{
+              fontWeight: 900,
+              fontSize: "2rem",
+              color: "var(--color-title)",
+              margin: 0,
+              marginBottom: 7,
+            }}
+          >
+            {blog.title}
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              gap: 8,
+              flexWrap: "wrap",
+              marginBottom: 8,
+            }}
+          >
+            {blog.skills?.map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  padding: "2px 14px",
+                  borderRadius: "100px",
+                  background: "#e9f6fa",
+                  color: "#09d3e0",
+                  fontWeight: 700,
+                  fontSize: "0.99rem",
+                  border: "1.2px solid #c6ecf5",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span style={{ color: "#888", fontSize: "1rem" }}>
+            {blog.published} &nbsp;|&nbsp; {blog.techStack} &nbsp;|&nbsp;{" "}
+            {blog.duration}
+          </span>
+        </div>
+      </div>
+      <hr
+        style={{
+          margin: "2rem 0",
+          border: "none",
+          borderTop: "1.2px solid #e1e8f5",
+        }}
+      />
+
+      {/* Section blocks */}
+      <SectionBlock
+        label="Introduction"
+        value={blog.introDetail || blog.intro}
+      />
+      <SectionBlock label="Goals" value={blog.goalDetail || blog.goal} />
+      <SectionBlock
+        label="Motivation"
+        value={blog.motivationDetail || blog.motivation}
+      />
+      <SectionBlock label="Project Structure" value={blog.projectStructure} />
+      <SectionBlock
+        label="Skills Used"
+        value={blog.skillsUsed || blog.skills?.join(", ")}
+      />
+      <SectionBlock
+        label="Challenges"
+        value={blog.challengeDetail || blog.challenge}
+      />
+      <SectionBlock
+        label="Insights"
+        value={blog.insightsDetail || blog.insights}
+      />
+      <SectionBlock label="What’s Next?" value={blog.nextDetail || blog.next} />
+      <SectionBlock
+        label="Final Thoughts"
+        value={blog.finalThoughtsDetail || blog.finalThoughts}
+      />
+
+      {/* Optional links */}
+      {blog.links && blog.links.length > 0 && (
+        <div style={{ margin: "2.5rem 0 1.5rem 0" }}>
+          <h3 style={{ color: "var(--color-accent)" }}>🔗 Links</h3>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {blog.links.map((l, i) => (
+              <li key={i}>
+                <a
+                  href={l.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "var(--color-title)",
+                    fontWeight: 700,
+                    fontSize: "1.02rem",
+                  }}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// Helper for each blog section
+function SectionBlock({ label, value }) {
+  if (!value) return null;
+  return (
+    <div style={{ marginBottom: "1.25rem" }}>
+      <h2
+        style={{
+          color: "var(--color-accent)",
+          fontSize: "1.19rem",
+          margin: "0 0 0.25rem 0",
+        }}
+      >
+        {label}
+      </h2>
+      {Array.isArray(value) ? (
+        <ul
+          style={{
+            margin: "0.2rem 0 0.6rem 1.5rem",
+            color: "#495",
+            fontSize: "1.05rem",
+          }}
+        >
+          {value.map((v, i) => (
+            <li key={i} style={{ marginBottom: 5 }}>
+              {v}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div
+          style={{
+            margin: "0.2rem 0 0.6rem 0",
+            color: "#444",
+            fontSize: "1.09rem",
+          }}
+        >
+          {value}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default BlogDetail;
