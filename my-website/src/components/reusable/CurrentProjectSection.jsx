@@ -153,7 +153,7 @@ export default function CurrentProjectSection() {
             letterSpacing: "0.05em",
             zIndex: 100,
           }}
-          onClick={() => navigate("/projects")}
+          onClick={() => navigate("/blog")}
         >
           View More Projects
         </button>
