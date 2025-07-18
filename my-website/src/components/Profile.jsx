@@ -32,68 +32,69 @@ function Profile() {
   ];
 
   return (
-    <section
-      id="profile"
-      className="profile-section"
-      style={{
-        border: "1.2px solid var(--color-border)",
-        borderRadius: "1.3rem",
-        padding: "2rem",
-        boxShadow: "0 8px 24px rgba(60,60,60,0.06)",
-        background: "var(--color-bg-alt)",
-      }}
-    >
-      {" "}
-      <div className="section__pic-container">
-        <img src={profilePic} alt="Joy Wong profile" />
-      </div>
-      <div className="section__text">
-        <p className="section__text__p1">Hello, I'm</p>
-        <h1 className="title">Joy Wong</h1>
-        <p className="section__text__p2">
-          Software Development Student <span className="dot">•</span> Tech
-          Enthusiast
-        </p>
-        {/* Tech Stack Icons */}
-        <div className="tech-stack-icons" style={{ margin: "1.1rem 0" }}>
-          {techs.map((tech) => (
-            <button
-              key={tech.name}
-              className="tech-icon-btn"
-              title={`See ${tech.name} projects`}
-              onClick={() => navigate(`/projects?tech=${tech.filter}`)}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                margin: "0 0.2rem",
-                cursor: "pointer",
-              }}
-            >
-              {tech.icon}
-            </button>
-          ))}
+    <>
+      <section
+        id="profile"
+        className="profile-section"
+        style={{
+          border: "1.2px solid var(--color-border)",
+          borderRadius: "1.3rem",
+          padding: "2rem",
+          boxShadow: "0 8px 24px rgba(60,60,60,0.06)",
+          background: "var(--color-bg-alt)",
+        }}
+      >
+        {" "}
+        <div className="section__pic-container">
+          <img src={profilePic} alt="Joy Wong profile" />
         </div>
-        {/* Quick Stats */}
-        <div className="quick-stats">
-          <span>
-            <span role="img" aria-label="Calendar">
-              🗓
-            </span>{" "}
-            2+ years coding
-          </span>
-          <span
-            className="stats-link"
-            onClick={() => navigate("/projects")}
-            style={{ cursor: "pointer" }}
-            title="See my projects"
-          >
-            <span role="img" aria-label="Books">
-              📚
-            </span>{" "}
-            8+ projects
-          </span>
-          {/* <span
+        <div className="section__text">
+          <p className="section__text__p1">Hello, I'm</p>
+          <h1 className="title">Joy Wong</h1>
+          <p className="section__text__p2">
+            Software Development Student <span className="dot">•</span> Tech
+            Enthusiast
+          </p>
+          {/* Tech Stack Icons */}
+          <div className="tech-stack-icons" style={{ margin: "1.1rem 0" }}>
+            {techs.map((tech) => (
+              <button
+                key={tech.name}
+                className="tech-icon-btn"
+                title={`See ${tech.name} projects`}
+                onClick={() => navigate(`/projects?tech=${tech.filter}`)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  margin: "0 0.2rem",
+                  cursor: "pointer",
+                }}
+              >
+                {tech.icon}
+              </button>
+            ))}
+          </div>
+          {/* Quick Stats */}
+          <div className="quick-stats">
+            <span>
+              <span role="img" aria-label="Calendar">
+                🗓
+              </span>{" "}
+              2+ years coding
+            </span>
+            <span
+              className="stats-link"
+              onClick={() => navigate("/projects")}
+              style={{ cursor: "pointer" }}
+              title="See my projects"
+            >
+              <span role="img" aria-label="Books">
+                📚
+              </span>{" "}
+              8+ projects
+            </span>
+            {/* <span
             className="stats-link"
             onClick={() => navigate("/projects?lang=all")}
             style={{ cursor: "pointer" }}
@@ -101,45 +102,50 @@ function Profile() {
           >
             <span role="img" aria-label="Globe">🌏</span> 4 languages
           </span> */}
+          </div>
+          {/* Buttons */}
+          <div className="btn-container" style={{ marginTop: "1.2rem" }}>
+            <a
+              className="btn btn-color-2"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </a>
+            <a className="btn btn-color-1" href="/contact">
+              Contact Info
+            </a>
+          </div>
+          {/* Socials */}
+          <div id="socials-container" style={{ marginTop: "1.2rem" }}>
+            <a
+              href="https://linkedin.com/in/kwanting1228/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="icon" />
+            </a>
+            <a
+              href="https://github.com/joywong1228/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="icon" />
+            </a>
+          </div>
+          <div className="currently-learning">
+            <span>Currently learning: TypeScript & AI tools</span>
+          </div>
         </div>
-        {/* Buttons */}
-        <div className="btn-container" style={{ marginTop: "1.2rem" }}>
-          <a
-            className="btn btn-color-2"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download CV
-          </a>
-          <a className="btn btn-color-1" href="/contact">
-            Contact Info
-          </a>
-        </div>
-        {/* Socials */}
-        <div id="socials-container" style={{ marginTop: "1.2rem" }}>
-          <a
-            href="https://linkedin.com/in/kwanting1228/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="icon" />
-          </a>
-          <a
-            href="https://github.com/joywong1228/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="icon" />
-          </a>
-        </div>
-        <div className="currently-learning">
-          <span>Currently learning: TypeScript & AI tools</span>
-        </div>
-      </div>
-      <UpcomingFeatureSection />
-      <CurrentProjectSection />
-    </section>
+      </section>
+      <section className="upcoming-features-section">
+        <UpcomingFeatureSection />
+      </section>
+      <section className="current-projects-section">
+        <CurrentProjectSection />
+      </section>
+    </>
   );
 }
 

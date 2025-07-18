@@ -44,6 +44,8 @@ export default function UpcomingFeatureSection() {
             key={id}
             style={{
               display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
               justifyContent: "space-between",
               alignItems: "center",
               padding: "0.75rem 1rem",
@@ -51,11 +53,17 @@ export default function UpcomingFeatureSection() {
               borderRadius: "3rem",
               boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
               cursor: "default",
+              gap: "1rem", // add gap for wrapping spacing
             }}
           >
-            <div>
+            <div style={{ flex: "1 1 300px", minWidth: 0 }}>
               <strong
-                style={{ fontSize: "1.1rem", color: "var(--color-title)" }}
+                style={{
+                  fontSize: "1.1rem",
+                  color: "var(--color-title)",
+                  display: "block",
+                  marginBottom: "0.25rem",
+                }}
               >
                 {title}
               </strong>
@@ -64,17 +72,15 @@ export default function UpcomingFeatureSection() {
                   fontSize: "0.9rem",
                   color: "var(--color-text)",
                   marginTop: "0.25rem",
-                  maxWidth: "400px",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  whiteSpace: "normal", // allow wrapping
+                  overflowWrap: "break-word",
                 }}
                 title={intro}
               >
                 {intro}
               </div>
             </div>
-            <div style={{ display: "flex", gap: "0.5rem" }}>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
               {skills.map((skill) => (
                 <span
                   className="btn-color-2"
