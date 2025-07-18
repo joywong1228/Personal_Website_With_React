@@ -77,10 +77,9 @@ export default function UpcomingFeatureSection() {
             <div style={{ display: "flex", gap: "0.5rem" }}>
               {skills.map((skill) => (
                 <span
+                  className="btn-color-2"
                   key={skill}
                   style={{
-                    background: "var(--color-accent)",
-                    color: "#fff",
                     padding: "0.15rem 0.7rem",
                     borderRadius: "9999px",
                     fontSize: "0.8rem",

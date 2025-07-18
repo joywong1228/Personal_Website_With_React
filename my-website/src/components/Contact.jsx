@@ -1,6 +1,11 @@
 // src/components/Contact.jsx
 import React from "react";
-import { FaEnvelope, FaWhatsapp, FaLinkedin, FaArrowRight } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaLinkedin,
+  FaArrowRight,
+} from "react-icons/fa";
 
 function Contact() {
   return (
@@ -9,19 +14,19 @@ function Contact() {
       <h3 className="title">Contact Me</h3>
       <div className="contact__container container grid">
         <div className="contact__info">
-          <div className="contact__card">
+          <div className="contact__card border-shadow">
             <FaEnvelope className="fa-2x contact__card-icon" />
             <a
               href="mailto:joywong1228@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact__butoon"
+              className="contact__butoon "
             >
               joywong1228@gmail.com
               <FaArrowRight className="contact__butoon-icon" />
             </a>
           </div>
-          <div className="contact__card">
+          <div className="contact__card border-shadow">
             <FaWhatsapp className="fa-2x contact__card-icon" />
             <a
               href="https://wa.me/15196143819"
@@ -33,7 +38,7 @@ function Contact() {
               <FaArrowRight className="contact__butoon-icon" />
             </a>
           </div>
-          <div className="contact__card">
+          <div className="contact__card border-shadow">
             <FaLinkedin className="fa-2x contact__card-icon" />
             <a
               href="https://linkedin.com/in/kwanting1228/"

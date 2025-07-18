@@ -188,14 +188,13 @@ function BlogDetail() {
           </h2>
           {/* Button linking to live demo */}
           <a
+            className="btn-color-2"
             href={blog.liveDemo}
             target="_blank"
             rel="noopener noreferrer"
             style={{
               display: "inline-block",
               padding: "0.6rem 1.2rem",
-              backgroundColor: "var(--color-accent)",
-              color: "#fff",
               borderRadius: "9999px",
               fontWeight: 700,
               textDecoration: "none",
