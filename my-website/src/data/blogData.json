@@ -55,40 +55,94 @@
       {
         "title": "Deployment Quirks on Vercel",
         "details": [
-          "Issues with asset paths between public and src directories.",
-          "Routing errors due to Vercel configuration differences.",
-          "Static assets sometimes not loading correctly."
+          {
+            "number": 1,
+            "text": "Issues with asset paths between public and src directories."
+          },
+          {
+            "number": 2,
+            "text": "Routing errors due to Vercel configuration differences."
+          },
+          {
+            "number": 3,
+            "text": "Static assets sometimes not loading correctly."
+          }
         ],
         "methods": [
-          "Carefully structure assets between public and src folders.",
-          "Use Vercel configuration files to control routing behavior.",
-          "Test deployment thoroughly before final release."
+          {
+            "number": 1,
+            "text": "Carefully structure assets between public and src folders."
+          },
+          {
+            "number": 2,
+            "text": "Use Vercel configuration files to control routing behavior."
+          },
+          {
+            "number": 3,
+            "text": "Test deployment thoroughly before final release."
+          }
         ]
       },
       {
         "title": "State Management Challenges",
         "details": [
-          "Managing theme toggling without causing UI glitches.",
-          "State updates that do not trigger expected re-renders.",
-          "Synchronizing state across components."
+          {
+            "number": 1,
+            "text": "Managing state across components without causing re-renders."
+          },
+          {
+            "number": 2,
+            "text": "Ensuring theme toggling works smoothly without UI glitches."
+          },
+          {
+            "number": 3,
+            "text": "Synchronizing state updates across multiple components."
+          }
         ],
         "methods": [
-          "Use React Context or state management libraries like Redux.",
-          "Optimize component rendering with memoization techniques.",
-          "Write unit and integration tests to catch state bugs."
+          {
+            "number": 1,
+            "text": "Use React Context API for global state management."
+          },
+          {
+            "number": 2,
+            "text": "Implement memoization techniques to prevent unnecessary re-renders."
+          },
+          {
+            "number": 3,
+            "text": "Write unit tests to catch state-related bugs early."
+          }
         ]
       },
       {
         "title": "Ongoing Feature Updates",
         "details": [
-          "Continuously adding new ideas like dark mode and additional pages.",
-          "Ensuring backward compatibility while adding features.",
-          "Managing technical debt during frequent updates."
+          {
+            "number": 1,
+            "text": "Continuously adding new ideas like dark mode and additional pages."
+          },
+          {
+            "number": 2,
+            "text": "Ensuring backward compatibility while adding features."
+          },
+          {
+            "number": 3,
+            "text": "Managing technical debt during frequent updates."
+          }
         ],
         "methods": [
-          "Follow semantic versioning and use feature toggles.",
-          "Keep a comprehensive changelog and documentation.",
-          "Refactor and clean code regularly to manage debt."
+          {
+            "number": 1,
+            "text": "Use feature flags to control new features without breaking existing functionality."
+          },
+          {
+            "number": 2,
+            "text": "Follow semantic versioning to track changes and updates."
+          },
+          {
+            "number": 3,
+            "text": "Maintain a changelog to document changes and updates."
+          }
         ]
       }
     ],
@@ -105,7 +159,7 @@
       "Integrate more interactive elements (e.g., live projects, demo links)"
     ],
     "finalThoughts": "Rebuilding my site showed me how far I’ve come as a developer.",
-    "finalThoughtsDetail": "Rebuilding my personal website in React (and deploying on Vercel) was the best way to see my own progress as a developer. Now I have a platform that’s easy to maintain, fun to improve, and shows my skills as they grow.",
+    "finalThoughtsDetail": "Rebuilding my personal website using React and deploying it on Vercel has been both a challenging and rewarding experience. It pushed me to deepen my understanding of modern web development concepts such as CSS variables for theming, React hooks like useState and useEffect, and efficient deployment workflows. This project not only reflects my growth as a developer but also lays a strong foundation for future enhancements, including dynamic features and improved user experience. I look forward to continuously iterating on this work and expanding my skills further.",
     "links": [
       {
         "label": "Source on GitHub",
@@ -128,6 +182,8 @@
     "duration": "Ongoing (MVP in ~3 days)",
     "startDate": "2025-05-22",
     "endDate": "",
+    "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content.",
+
     "intro": "A simple, offline star map built with React Native and Expo.",
     "introDetail": "AstroTracker is my first step into building a mobile astronomy tool that’s simple, educational, and completely offline. Most stargazing apps feel bloated or locked behind paywalls, so I decided to make my own lightweight, open alternative.",
     "goal": "Visualize real stars/constellations using live device location.",
@@ -185,5 +241,693 @@
         ]
       }
     ]
-  }
+  },
+  {
+    "id": "ai-closet-style",
+    "title": "AI Closet Style – GPT-4 Outfit Generator for Fashion Apps",
+    "skills": ["Express", "TypeScript", "OpenAI GPT-4 API", "Render", "Expo"],
+    "previewImg": "/projectimg/ai-closet-preview.png",
+    "published": "2025-07-18",
+    "techStack": "Express, TypeScript, OpenAI GPT-4 API, Render (backend), Expo (frontend)",
+    "duration": "1 week for backend, integrated into ongoing mobile app project",
+    "intro": "AI Closet Style is my attempt to bring real-time, creative AI to everyday fashion.",
+    "introDetail": "The idea: press a button in your closet app and instantly see five fresh, on-trend outfit ideas—each generated by GPT-4, complete with style names, descriptions, and DALL·E image prompts. The backend is a lightweight Express API, ready for cloud deployment and secure enough to keep my OpenAI key safe from users.",
+    "goal": "Connect my mobile app to GPT-4 for truly 'AI-powered' fashion ideas.",
+    "goalDetail": [
+      "Connect my mobile app to GPT-4 for truly “AI-powered” fashion ideas",
+      "Get 5 new, catchy outfit style cards every time I refresh",
+      "Make it shareable: anyone with the app can get ideas, from anywhere",
+      "Keep my OpenAI key secure with a cloud backend (not exposed in the app)",
+      "Simple, fast, and cheap to run—free Render plan!"
+    ],
+    "motivation": "Wanted something more inspiring and dynamic than usual wardrobe apps.",
+    "motivationDetail": "I love minimalist wardrobe apps, but most just cycle through the same old “casual,” “preppy,” or “date night” tags. I wanted something more inspiring and dynamic—outfit ideas that change every day, sometimes pastel, sometimes bold, sometimes a little weird (in a good way). Plus, it was a fun way to learn OpenAI API and backend deployment beyond the usual web demos.",
+    "projectStructure": "/backend\n  ├─ index.ts              → Express API: POST /api/get-style-ideas\n  ├─ package.json          → scripts, dependencies, start/build commands\n  ├─ tsconfig.json         → TypeScript config\n  ├─ .env.example          → (never commit your real .env!)\n  └─ README.md\n\n(frontend integration in Expo/React Native, not detailed here)",
+    "skillsUsed": [
+      "Node.js + Express: API design, environment config",
+      "TypeScript: types, safety, modern async/await",
+      "OpenAI API: prompt crafting, output parsing, rate limit handling",
+      "Render: free, always-on cloud backend deployment",
+      "REST integration: mobile-to-backend secure data flow"
+    ],
+    "challenges": [
+      {
+        "title": "OpenAI Key Safety",
+        "details": ["Keeping secrets out of the frontend (never commit .env!)"],
+        "methods": [
+          "Use backend proxy to keep key hidden",
+          "Store .env securely and gitignore"
+        ]
+      },
+      {
+        "title": "Networking and CORS",
+        "details": ["Expo apps can’t call OpenAI directly—needed a backend"],
+        "methods": ["Set up CORS properly in Express", "Use HTTPS endpoints"]
+      },
+      {
+        "title": "Version and Deployment Quirks",
+        "details": [
+          "Express 5 types, tsconfig, and package version mismatches",
+          "Render deployment: build command and PORT variable configuration"
+        ],
+        "methods": [
+          "Careful version pinning",
+          "Follow Render docs for deployment environment"
+        ]
+      },
+      {
+        "title": "Parsing GPT-4 Output",
+        "details": [
+          "GPT-4 sometimes returns code blocks or markdown—needed a robust cleaner"
+        ],
+        "methods": ["Sanitize responses", "Parse JSON safely and handle errors"]
+      }
+    ],
+    "insights": "Real AI makes apps feel alive; cloud backend keeps things simple and shareable.",
+    "insightsDetail": [
+      "Real AI makes apps feel “alive”—users get different ideas each time",
+      "Keeping the backend small (just one POST endpoint) means fewer bugs",
+      "Cloud deployment opens up sharing—friends don’t need to run their own servers",
+      "Prompt design is a superpower—tiny tweaks change style, tone, and fun",
+      "The hardest part is always wiring up the first API call and parsing the AI’s reply!"
+    ],
+    "next": "Add images, user preferences, multi-language, and interactivity.",
+    "nextDetail": [
+      "Integrate DALL·E or other image generator for real AI outfit previews",
+      "Save & favorite ideas per user (add database)",
+      "Let users tweak prompts: “give me cozy pastel,” “what’s hot in Tokyo now?”",
+      "Multi-language support for global friends",
+      "Link AI outfits to real wardrobe items for mix-and-match"
+    ],
+    "finalThoughts": "AI Closet Style turned a basic fashion app into something surprising and delightful.",
+    "finalThoughtsDetail": "AI Closet Style turned a basic fashion app into something surprising and delightful. Each day, new ideas—sometimes cute, sometimes totally out-there, always creative. Connecting Expo, Express, and OpenAI made me learn a lot about real-world AI app architecture (and how to debug npm type errors!). If you want to add live AI content to your app without blowing your key or your wallet, this pattern is hard to beat. Fashion should be fun, unpredictable, and a little bit magic. AI makes it possible.",
+    "links": [
+      {
+        "label": "Backend Source on GitHub",
+        "url": "https://github.com/joywong1228/ai-closet-backend"
+      }
+    ],
+    "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  {
+    "id": "cancun-menu-app",
+    "title": "CancunMenuApp – Interactive Resort Dining Explorer",
+    "skills": [
+      "React Native",
+      "Expo",
+      "Expo Speech",
+      "AsyncStorage",
+      "React Context"
+    ],
+    "previewImg": "/assets/project/cancun-menu-preview.png",
+    "published": "(add date)",
+    "startDate": "2025-05-01",
+    "endDate": "2025-06-01",
+    "techStack": "React Native (Expo), Expo Speech, AsyncStorage, React Context",
+    "duration": "2–3 weeks for MVP, still evolving",
+    "intro": "CancunMenuApp is my personal take on solving a small but real travel frustration: browsing resort restaurant menus should be easy, visual, and accessible.",
+    "introDetail": "Many resorts—including the beautiful Moon Palace Cancun—offer dozens of restaurants, but their menus are often buried in PDFs or outdated apps. I wanted to create a mobile-friendly experience where guests can swipe, listen, favorite, and preview dishes across venues in one elegant UI.",
+    "goal": "Build an intuitive and interactive resort dining app.",
+    "goalDetail": [
+      "Build a smooth, intuitive restaurant menu viewer for Moon Palace Cancun",
+      "Let users “favorite” dishes with animation and swipes",
+      "Add Cantonese and English voice playback of dish names",
+      "Auto-play and swipe through dish cards (kiosk-style)",
+      "Organize menus by restaurant, category, and multilingual support",
+      "Offline-first & usable without internet"
+    ],
+    "motivation": "Create a tactile and simple menu app that feels like flipping through cards at a fancy buffet.",
+    "motivationDetail": "As someone who loves both travel and structured UI design, I wanted to turn my Moon Palace experience into a polished app. Most menu apps feel clunky or overloaded, so I focused on swipes, taps, and voice as main interactions. It was also a great way to improve my React Native skills.",
+    "projectStructure": "/components\n  └─ MenuItemPreviewCard.tsx → popup swipeable card with audio + heart\n  └─ RestaurantPreviewCard.tsx → restaurant image card\n/screens\n  └─ MenuScreen.tsx → shows menu by restaurant\n  └─ FavoritesScreen.tsx → saved favorites from all menus\n  └─ RestaurantListScreen.tsx → explore restaurants visually\n/context\n  └─ FavoritesContext.tsx → global state management\n/data\n  └─ moonPalaceRestaurants.ts → metadata per restaurant\n  └─ menu-sun-01.ts → structured bilingual menu (JSON format)\n/assets\n  └─ photos of real dishes / logos / backgrounds",
+    "skillsUsed": [
+      "React Native (Expo): Core layout, navigation stack",
+      "GestureResponder & PanResponder: Swipe left/right for menu cards",
+      "Expo Speech: Play English/Cantonese dish names via button",
+      "AsyncStorage + Context: Persist and manage favorite items",
+      "Touchable feedback + toast messages: Show heart zoom, alerts like “End of list”",
+      "JSX animation + logic for double-tap, long press, swipe bounds"
+    ],
+    "challenges": [
+      {
+        "title": "Edge Swipe Handling",
+        "details": [
+          "Users swiping beyond first/last card needed gentle boundary alerts like “This is the end.”"
+        ],
+        "methods": [
+          "Implement toast alerts on boundary swipes",
+          "Use gesture detection to prevent abrupt UI jumps"
+        ]
+      },
+      {
+        "title": "Expo Speech Quirks",
+        "details": [
+          "Cantonese voice support needed tweaking and language tagging (zh-HK)"
+        ],
+        "methods": [
+          "Set appropriate language codes in Expo Speech API",
+          "Test voice playback across devices"
+        ]
+      },
+      {
+        "title": "Heart Animation",
+        "details": [
+          "Animating the heart without breaking layout; double-tap conflicts"
+        ],
+        "methods": [
+          "Separate animation and gesture logic",
+          "Test with various tap speeds"
+        ]
+      },
+      {
+        "title": "Kiosk Mode",
+        "details": [
+          "Auto-play with swipe-only (no voice) needed a clean toggle and state reset on close"
+        ],
+        "methods": ["Create toggle controls and clear timers on modal close"]
+      },
+      {
+        "title": "Context Syncing",
+        "details": [
+          "Ensuring Favorites persisted and updated live across screens"
+        ],
+        "methods": [
+          "Use React Context for global favorites state",
+          "Persist favorites to AsyncStorage"
+        ]
+      }
+    ],
+    "insights": [
+      "UI polish matters: swipe feedback, modals, and toast alerts improve usability",
+      "Designing structured menu JSON simplifies dynamic rendering",
+      "Splitting MenuItemPreviewCard into visual and logic sections improves scalability",
+      "Avoiding bloated UI kits keeps the app lightweight and custom-feeling"
+    ],
+    "next": [
+      "Add search across all dishes (by keyword or ingredients)",
+      "Add location-aware filters: show nearby venues in the resort",
+      "Add image carousel for dishes with multiple photos",
+      "Add voice settings: speed, tone, voice options",
+      "Add dark mode toggle for night browsing",
+      "Add export of favorites list to shareable PDF"
+    ],
+    "finalThoughts": "CancunMenuApp started as a fun side project but quickly became a polished tool I wish I had while on vacation. It blends UX, multilingual design, offline access, and interactivity.",
+    "finalThoughtsDetail": "Whether you’re a guest planning dinner or a developer curious about React Native voice integration, there’s something here for you. Menus shouldn’t be boring—they should be swipeable, speakable, and lovable.",
+    "links": [
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/cancunmenuapp"
+      },
+      {
+        "label": "Submit a Menu PR",
+        "url": "https://github.com/joywong1228/cancunmenuapp/pulls"
+      }
+    ],
+    "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  {
+    "id": "keep-track-of-weight",
+    "title": "Keep Track Of Weight – A Simple iOS Weight Tracker",
+    "skills": ["SwiftUI", "SwiftData"],
+    "previewImg": "/assets/project/weight-tracker-preview.png",
+    "published": "(add date)",
+    "startDate": "2024-05-01",
+    "endDate": "2024-05-03",
+    "techStack": "SwiftUI, SwiftData",
+    "duration": "2 days (MVP)",
+    "intro": "After struggling to find a weight tracking app that’s simple, fast, and private, I decided to build my own using Apple’s newest frameworks—SwiftUI and SwiftData.",
+    "introDetail": "“Keep Track Of Weight” is my answer to endless bloated fitness apps. It focuses on the essentials: log your weight daily, keep your data on-device, and visualize your progress over time.",
+    "goal": "Practice modern SwiftUI and SwiftData; build a privacy-first MVP.",
+    "goalDetail": [
+      "Practice modern SwiftUI and SwiftData: Apply Apple’s latest declarative UI and persistence tools in a real project.",
+      "Build an MVP: Just the basics—a way to add daily weights with timestamps and review your history.",
+      "Privacy first: Store everything locally, with no accounts or ads.",
+      "Lay a foundation: Make future features (charts, HealthKit, reminders) easy to add."
+    ],
+    "motivation": "Build a minimal, private weight tracker tailored to my needs.",
+    "motivationDetail": "I’ve been working on building healthier habits, and daily weight tracking is a proven method for accountability. Most existing apps were overloaded or required signups, so I chose to build a focused, private solution and learn SwiftData.",
+    "projectStructure": "App file (Keep_Track_Of_WeightApp.swift): Sets up the shared SwiftData model container.\nModel (Item.swift): Defines each weight entry with a timestamp (will add weight value soon).\nUI (ContentView.swift and others): Main views for adding and listing entries.\n(Optional): Unit/UI Tests with Xcode’s built-in testing targets.",
+    "skillsUsed": [
+      "SwiftUI: For the entire UI, navigation, and user interactions.",
+      "SwiftData: Apple’s modern solution for local persistent storage.",
+      "Xcode project structuring, app lifecycle, and model containers.",
+      "Testing with Xcode’s default unit/UI test targets.",
+      "Planning for extensibility and clean code."
+    ],
+    "challenges": [
+      {
+        "title": "Learning SwiftData",
+        "details": [
+          "SwiftData is new (WWDC 2023), so examples and docs are still sparse compared to Core Data."
+        ],
+        "methods": [
+          "Read Apple’s WWDC sessions carefully.",
+          "Experiment with model and container setups."
+        ]
+      },
+      {
+        "title": "Data Model Design",
+        "details": [
+          "Deciding initial schema: timestamp-only vs adding weight, notes, etc."
+        ],
+        "methods": [
+          "Start simple and add fields later.",
+          "Plan for schema migrations."
+        ]
+      },
+      {
+        "title": "Persistence Quirks",
+        "details": [
+          "Ensuring the model container is properly shared and persists data on device, not just in memory."
+        ],
+        "methods": [
+          "Test saving and loading thoroughly.",
+          "Debug lifecycle and container usage."
+        ]
+      },
+      {
+        "title": "UI Simplicity",
+        "details": ["Avoiding feature creep before basics were solid."],
+        "methods": [
+          "Focus on core MVP features first.",
+          "Use iterative design."
+        ]
+      }
+    ],
+    "insights": [
+      "SwiftUI + SwiftData is productive with live previews and quick debugging.",
+      "Getting an MVP done early is empowering for future work.",
+      "Privacy is a strong selling point for niche apps."
+    ],
+    "next": [
+      "Add actual weight input values (currently timestamp-only).",
+      "Add simple line chart for visualizing progress.",
+      "Integrate with HealthKit for syncing data.",
+      "Add notifications for daily reminders.",
+      "Polish UI, add dark mode and accessibility."
+    ],
+    "finalThoughts": "Building “Keep Track Of Weight” was a fun intro to modern iOS development. I’m eager to expand and improve it—feedback and contributions welcome!",
+    "links": [
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/keep-track-of-weight"
+      }
+    ],
+    "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  {
+    "id": "pyjama-flappy-meruem",
+    "title": "Flappy Meruem – My First Complete Pygame Project",
+    "skills": ["Python", "Pygame", "OOP", "Game Design"],
+    "previewImg": "/projectimg/flappy-meruem-preview.png",
+    "published": "(add date)",
+    "techStack": "Python, Pygame",
+    "duration": "A few weeks",
+    "startDate": "2025-03-01",
+    "endDate": "2025-03-21",
+    "intro": "A pixelated, fast-paced side-scroller where you pilot the Chimera Ant King through endless pillars.",
+    "introDetail": "Earlier this year, I took my Python skills to the next level by building a simple 2D game with Pygame. As a fan of Hunter x Hunter, I swapped the classic Flappy Bird for Meruem, adding pixel art UI and retro vibes.",
+    "goal": "Learn Pygame basics and build a playable, fun game from scratch.",
+    "goalDetail": [
+      "Understand game loops, sprite handling, and collision detection.",
+      "Build a playable Flappy Bird-style game with a unique character.",
+      "Add custom pixel art and retro UI."
+    ],
+    "motivation": "Create a fun project that blends Python skills with personal interests.",
+    "motivationDetail": "I wanted to go beyond tutorials and make a complete game inspired by one of my favorite anime characters. This was a chance to practice Python and have fun doing it.",
+    "challenge": "Mastering sprite animation, physics, and game state management.",
+    "challenges": [
+      {
+        "title": "Sprite Animation",
+        "details": [
+          "Smooth sprite cycling and frame speed control.",
+          "Trigger animation only when appropriate."
+        ],
+        "methods": [
+          "Cycle through frames based on time.",
+          "Implement condition checks before animating."
+        ]
+      },
+      {
+        "title": "Physics & Gravity",
+        "details": [
+          "Adjust jump and gravity to feel right for a larger sprite."
+        ],
+        "methods": [
+          "Tweak velocity and gravity constants.",
+          "Test gameplay repeatedly."
+        ]
+      },
+      {
+        "title": "Pipe Generation",
+        "details": ["Random but fair pipe gaps and positions."],
+        "methods": [
+          "Generate random gaps within set limits.",
+          "Balance difficulty for replay value."
+        ]
+      },
+      {
+        "title": "Collision Detection",
+        "details": ["Avoid false positives and sticking at edges."],
+        "methods": [
+          "Use Pygame's rect collision functions carefully.",
+          "Test edge cases thoroughly."
+        ]
+      },
+      {
+        "title": "Game State Handling",
+        "details": [
+          "Manage transitions between ready, flying, and game over states."
+        ],
+        "methods": [
+          "Implement a simple state machine pattern.",
+          "Reset game on restart properly."
+        ]
+      }
+    ],
+    "skillsUsed": [
+      "Python programming: list comprehensions, OOP with classes for Player, Pipe, Button.",
+      "Pygame library: event handling, drawing, sprite groups.",
+      "Basic animation: sprite cycling, scaling.",
+      "Simple physics: gravity, velocity, collision logic.",
+      "Game design: UI layout and restart logic.",
+      "Debugging: trial-and-error with coordinate math and error messages."
+    ],
+    "insights": "Games are state machines; polish matters; small changes have big impact; Pygame is great for fundamentals.",
+    "insightsDetail": [
+      "Even simple games require multiple game states and smooth transitions.",
+      "Tiny animation tweaks affect the feel dramatically.",
+      "Changing sprites or UI details can refresh gameplay.",
+      "Pygame exposes low-level game programming, which is great for learning."
+    ],
+    "next": "Refactor code, add sound effects, leaderboard, and possibly a mobile/web port.",
+    "nextDetail": [
+      "Separate game logic into modules.",
+      "Add flap and crash sounds.",
+      "Implement high score saving and leaderboard.",
+      "Consider porting to mobile or web."
+    ],
+    "finalThoughts": "Building Flappy Meruem taught me Python, Pygame, and game feel. Proud to finish and hope it inspires others!",
+    "finalThoughtsDetail": "This project was a great intro to game programming fundamentals. It was fun to blend my coding skills with personal interests. I’m excited to improve it and maybe share it with friends.",
+    "links": [
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/flappy-meruem"
+      }
+    ],
+    "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  {
+    "id": "tc-connect-platform",
+    "title": "TC Connect Platform – Community Hub for Mentorship and Career Growth",
+    "skills": [
+      "Web Development",
+      "Responsive Design",
+      "User Experience",
+      "Project Management",
+      "System Analysis"
+    ],
+    "previewImg": "/assets/project/tc-connect-preview.png",
+    "published": "2025-07",
+    "techStack": "React, Node.js, REST APIs, Responsive Web Design",
+    "duration": "Semester-long team project (Phase 2 - Final Analysis and Preliminary Design)",
+    "intro": "TC Connect Platform aims to create a dynamic, web-based platform as a central hub for mentorship, job readiness, startup support, and AI upskilling.",
+    "introDetail": "Designed to connect Advisors, Members, Founders, and Supporters, the platform offers role-specific dashboards, networking, and resources aligned with career and entrepreneurial goals. This project involved detailed analysis, use case and class diagrams, and team collaboration.",
+    "goal": "Develop a responsive platform fostering community-driven growth with features like 1:1 booking, job boards, workshops, discussion forums, and AI-driven course recommendations.",
+    "goalDetail": [
+      "Create user roles with custom dashboards and profiles",
+      "Integrate booking systems for mentorship sessions",
+      "Support job board with application and filtering features",
+      "Develop event calendar and workshop management",
+      "Include messaging, notifications, and third-party integrations"
+    ],
+    "motivation": "Build a unified platform to replace fragmented resources and enhance career and learning opportunities in Alberta’s tech community.",
+    "motivationDetail": "The sponsor’s current site lacks user accounts and interactive features. This platform will empower users with personalized experiences and scalable services in mentorship and professional development.",
+    "projectStructure": "Includes use case diagrams, use case descriptions, class and ER diagrams, and a detailed team constitution outlining roles and collaboration norms.",
+    "skillsUsed": [
+      "System analysis and design",
+      "Use case and class diagram modeling",
+      "Team collaboration and project management",
+      "Requirement gathering and client communication",
+      "Responsive web design principles"
+    ],
+    "challenges": [
+      {
+        "title": "Complex Role-Based Access",
+        "details": [
+          "Managing multiple user roles with different permissions",
+          "Ensuring data security and privacy across roles"
+        ],
+        "methods": [
+          "Define clear role hierarchies and data access rules",
+          "Implement authorization mechanisms"
+        ]
+      },
+      {
+        "title": "Comprehensive Use Case Coverage",
+        "details": [
+          "Detailing all user interactions and error flows",
+          "Balancing system flexibility with clarity"
+        ],
+        "methods": [
+          "Use flowcharts and detailed scenarios",
+          "Regular team reviews and client feedback"
+        ]
+      },
+      {
+        "title": "Team Coordination",
+        "details": [
+          "Distributing tasks among members effectively",
+          "Managing communication and conflict resolution"
+        ],
+        "methods": [
+          "Weekly meetings and status updates",
+          "Defined roles like Leader, Scribe, and Standards Person"
+        ]
+      }
+    ],
+    "insights": [
+      "Early and detailed use case analysis prevents development roadblocks.",
+      "Clear communication and role definition enhance team productivity.",
+      "System design must balance user needs, security, and scalability."
+    ],
+    "next": [
+      "Implementation of the platform based on the analysis and designs.",
+      "Iterative testing with real users and stakeholder feedback.",
+      "Expanding features like AI upskilling and third-party integrations."
+    ],
+    "finalThoughts": "TC Connect Platform is a foundational project combining technical design and teamwork to build a meaningful community tool. The experience deepened understanding of system analysis, user needs, and project collaboration.",
+    "teamConstitution": {
+      "teamName": "Alberta Connector",
+      "members": [
+        {
+          "name": "Kwan Ting Wong (Joy)",
+          "role": "Standards Person",
+          "skills": [
+            "UI/UX design",
+            "Front-end development",
+            "Team collaboration"
+          ]
+        },
+        {
+          "name": "Jessie Tang",
+          "role": "Leader",
+          "skills": ["Client communication", "Submission coordination"]
+        },
+        {
+          "name": "Dion Emary",
+          "role": "Scribe/Facilitator",
+          "skills": ["Meeting documentation", "Notes management"]
+        },
+        {
+          "name": "Lam Dao",
+          "role": "Peace Maker/Mediator",
+          "skills": ["Conflict resolution", "Problem analysis"]
+        }
+      ],
+      "goals": [
+        "Deliver functional, tested platform meeting client requirements",
+        "Maintain effective communication and equal participation",
+        "Strengthen skills in web and mobile development",
+        "Finish project within the semester timeline"
+      ],
+      "meetingSchedule": ["Wednesday 10am–11am", "Friday 1pm–2pm"],
+      "conflictResolutionPlan": "Stepwise escalation from group discussion to leader decision and instructor involvement if needed."
+    },
+    "links": [
+      {
+        "label": "Project PDF (Final Analysis & Design)",
+        "url": "/assets/docs/Phase2_FinalAnalysis_PreliminaryDesign.pdf"
+      }
+    ],
+    "liveDemoNote": "This project is a semester-long team effort and does not have a live demo yet. This blog is not complete; I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  {
+    "id": "appointment-manager",
+    "title": "Hair Salon Appointment Manager System",
+    "skills": ["Python", "OOP", "File I/O", "CLI"],
+    "previewImg": "/projectimg/appointment-manager-preview.png",
+    "published": "2024-12-13",
+    "techStack": "Python, Pygame",
+    "duration": "Several weeks across multiple project phases",
+    "startDate": "2024-10-01",
+    "endDate": "2024-12-13",
+    "intro": "A command-line appointment management system for a hair salon to schedule, track, and manage client bookings.",
+    "introDetail": "This project simulates a real-world booking system that tracks client names, phone numbers, appointment types, days, and times. It supports scheduling, canceling, changing appointments, and fee calculations.",
+    "goal": "Build a functional CLI appointment system applying OOP concepts and file management.",
+    "goalDetail": [
+      "Create a weekly calendar with hourly appointment slots.",
+      "Allow scheduling, canceling, and rescheduling of appointments.",
+      "Search appointments by client name or day.",
+      "Calculate fees by day and week.",
+      "Save and load appointment data from files."
+    ],
+    "motivation": "To practice Python programming with classes, file I/O, and real-world logic in a manageable project.",
+    "motivationDetail": "The project consolidates learning from Python basics to intermediate concepts like encapsulation and persistent storage. It also simulates practical business logic for a hair salon.",
+    "projectStructure": "/appointment.py → Appointment class with properties and methods\n/main.py → Appointment management module handling scheduling, searching, cancellations, and fee calculations\n/appointments.csv → Stores appointment data",
+    "skillsUsed": [
+      "Python classes and encapsulation",
+      "File reading and writing (CSV format)",
+      "Input validation and CLI interaction",
+      "List and loop management",
+      "Basic algorithm design for search and scheduling"
+    ],
+    "challenges": [
+      {
+        "title": "Input Validation and Error Handling",
+        "details": [
+          "Ensuring user inputs (times, days, appointment types) are valid.",
+          "Handling file I/O errors and invalid filenames."
+        ],
+        "methods": [
+          "Implemented input loops with prompts for re-entry on errors.",
+          "Used file existence checks and exception handling."
+        ]
+      },
+      {
+        "title": "Appointment Scheduling Logic",
+        "details": [
+          "Avoiding double bookings and managing appointment states.",
+          "Handling cancellation and rescheduling with state updates."
+        ],
+        "methods": [
+          "Checked slot availability before scheduling.",
+          "Reset appointment slots upon cancellation or changes."
+        ]
+      },
+      {
+        "title": "Calculating Fees",
+        "details": [
+          "Mapping appointment types to fees accurately.",
+          "Summing fees for specific days and the entire week."
+        ],
+        "methods": [
+          "Used constants for appointment types and corresponding fees.",
+          "Iterated over appointments with filtering by day."
+        ]
+      }
+    ],
+    "insights": [
+      "OOP principles help organize code clearly and reuse logic.",
+      "File persistence is essential for real-world applications beyond memory.",
+      "Careful input validation greatly improves user experience."
+    ],
+    "next": [
+      "Add GUI with Tkinter or PyQt for better usability.",
+      "Implement appointment reminders and notifications.",
+      "Add report exports and summary statistics."
+    ],
+    "finalThoughts": "This project strengthened my Python skills in classes, file I/O, and command-line interfaces, offering practical experience with business logic and state management.",
+    "finalThoughtsDetail": "I’m proud to have built a usable appointment system from scratch. It taught me to think carefully about user input, program state, and persistence. Future improvements will focus on UI and richer features.",
+    "links": [
+      {
+        "label": "Source Code on GitHub",
+        "url": "https://github.com/yourusername/appointment-manager"
+      }
+    ],
+    "liveDemoNote": "This project is a CLI application and does not have a live demo. This blog is not complete; I am focusing on adding all my projects first, then I will update the blog content."
+  },
+  [
+    {
+      "id": "calgary-parking-app",
+      "title": "Calgary Parking – Mobile App for Real-Time Parking Info",
+      "skills": [
+        "React Native",
+        "Expo",
+        "API Integration",
+        "Geolocation",
+        "UI/UX"
+      ],
+      "previewImg": "/assets/project/calgary-parking-preview.png",
+      "published": "2025-07-15",
+      "techStack": "React Native (Expo), REST APIs, MapView, Location Services",
+      "duration": "4 weeks (MVP)",
+      "startDate": "2025-06-20",
+      "endDate": "",
+      "intro": "A mobile app providing real-time parking availability, rates, and navigation across Calgary’s downtown parking lots.",
+      "introDetail": "This app integrates Calgary’s open parking data APIs with React Native and Expo to show available parking spots, hourly rates, payment options, and operating hours. It helps users find and reserve parking efficiently.",
+      "goal": "Build a user-friendly app that shows live parking info with location awareness and filtering.",
+      "goalDetail": [
+        "Fetch and display parking lot details including available spaces and rates",
+        "Allow users to filter lots by price, distance, and features",
+        "Integrate maps and navigation to guide users to parking",
+        "Persist user favorites and search history"
+      ],
+      "motivation": "Solve the daily frustration of finding parking in a busy city with easy-to-use mobile tools.",
+      "motivationDetail": "Parking in downtown Calgary is often frustrating and time-consuming. By leveraging public parking data and mobile tech, I wanted to create a tool that makes parking more accessible and less stressful for locals and visitors.",
+      "challenge": "Working with real-time APIs, accurate location handling, and UI responsiveness.",
+      "challenges": [
+        {
+          "title": "Real-Time Data Handling",
+          "details": [
+            "Integrating and caching live parking availability API data.",
+            "Handling network delays and offline scenarios gracefully."
+          ],
+          "methods": [
+            "Use React Query or similar for efficient data fetching and caching.",
+            "Implement fallback UI for offline mode."
+          ]
+        },
+        {
+          "title": "Geolocation and Map Integration",
+          "details": [
+            "Ensuring accurate user location tracking and map marker updates.",
+            "Handling permission prompts and fallback when location is denied."
+          ],
+          "methods": [
+            "Use Expo Location and react-native-maps with appropriate permissions.",
+            "Provide manual search and address entry as fallback."
+          ]
+        },
+        {
+          "title": "UI Performance and Usability",
+          "details": [
+            "Maintaining smooth scrolling and map interactions with large data sets.",
+            "Designing an intuitive filter and favorites system."
+          ],
+          "methods": [
+            "Optimize FlatList with memoization.",
+            "Keep UI minimal and focused with clear feedback."
+          ]
+        }
+      ],
+      "insights": [
+        "Combining public data with location services empowers practical city apps.",
+        "Efficient data caching and offline strategies greatly improve user experience.",
+        "Minimal and responsive UI design is key for mobile usability."
+      ],
+      "next": [
+        "Add parking reservations and payments integration.",
+        "Expand coverage to Calgary suburbs and event-specific parking.",
+        "Implement push notifications for parking spot availability."
+      ],
+      "finalThoughts": "Building Calgary Parking app was a rewarding challenge blending real-world data with user-centered mobile design. It’s a solid base for expanding smart city apps.",
+      "links": [
+        {
+          "label": "Source Code on GitHub",
+          "url": "https://github.com/joywong1228/calgary-parking-app"
+        }
+      ],
+      "liveDemoNote": "App is in MVP stage with real-time parking data but no payment or reservation features yet."
+    }
+  ]
 ]

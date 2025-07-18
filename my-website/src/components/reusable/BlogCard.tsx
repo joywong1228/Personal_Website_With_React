@@ -44,7 +44,10 @@ export default function BlogCard({
           alt="Preview"
           className="blog-card-img"
           loading="lazy"
-          onError={(e) => (e.target.style.display = "none")}
+          onError={(e) => {
+            e.currentTarget.onerror = null; // prevent loop
+            e.currentTarget.src = "/fallback.jpg"; // adjust fallback path as needed
+          }}
         />
       </div>
       {/* Content */}

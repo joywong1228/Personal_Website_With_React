@@ -1,5 +1,3 @@
-// src/components/CurrentProjectSection.jsx
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import blogData from "../../data/blogData.json"; // adjust path if needed
@@ -7,13 +5,13 @@ import blogData from "../../data/blogData.json"; // adjust path if needed
 export default function CurrentProjectSection() {
   const navigate = useNavigate();
 
-  // Filter all current projects (endDate empty or missing)
+  // Filter current projects (no endDate or empty)
   const currentProjects = blogData.filter(
     (p) => !p.endDate || p.endDate === ""
   );
 
   if (currentProjects.length === 0) {
-    return null; // no current projects to show
+    return null;
   }
 
   return (
@@ -22,7 +20,7 @@ export default function CurrentProjectSection() {
       style={{
         marginTop: "3rem",
         position: "relative",
-        paddingBottom: "4rem", // add bottom padding to prevent overlap with button
+        paddingBottom: "4rem",
       }}
     >
       <h2 style={{ color: "var(--color-title)", marginBottom: "1rem" }}>
@@ -34,7 +32,7 @@ export default function CurrentProjectSection() {
           <div
             className="border-shadow"
             key={id}
-            onClick={() => navigate(`/blog/${id}`)} // clickable row
+            onClick={() => navigate(`/blog/${id}`)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
@@ -48,11 +46,10 @@ export default function CurrentProjectSection() {
               background: "var(--color-bg-alt)",
               borderRadius: "1rem",
               boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-              cursor: "pointer", // show pointer cursor for clickable
+              cursor: "pointer",
               outline: "none",
             }}
           >
-            {/* Image Left */}
             {previewImg && (
               <img
                 src={previewImg}
@@ -69,7 +66,6 @@ export default function CurrentProjectSection() {
               />
             )}
 
-            {/* Text Right */}
             <div style={{ flex: 1, minWidth: 0 }}>
               <strong
                 style={{

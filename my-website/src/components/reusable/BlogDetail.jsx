@@ -112,6 +112,10 @@ function BlogDetail() {
                 objectFit: "cover",
                 display: "block",
               }}
+              onError={(e) => {
+                e.currentTarget.onerror = null; // prevent infinite loop
+                e.currentTarget.src = "/fallback.jpg"; // path to fallback image
+              }}
             />
           </div>
         )}
@@ -174,6 +178,23 @@ function BlogDetail() {
           borderTop: "1.3px solid var(--color-border, #e1e8f5)",
         }}
       />
+      {blog.liveDemoNote && (
+        <div
+          style={{
+            backgroundColor: "#ffe4e6",
+            color: "#b91c1c",
+            padding: "1rem 1.5rem",
+            borderRadius: "1rem",
+            marginBottom: "2rem",
+            textAlign: "center",
+            fontWeight: "700",
+            fontSize: "1.1rem",
+            border: "1.5px solid #f87171",
+          }}
+        >
+          {blog.liveDemoNote && <p>{blog.liveDemoNote}</p>}
+        </div>
+      )}
       {blog.liveDemo && (
         <section className="border-shadow" style={{ marginBottom: "2rem" }}>
           <h2
@@ -186,9 +207,10 @@ function BlogDetail() {
           >
             Live Demo
           </h2>
+
           {/* Button linking to live demo */}
           <a
-            className="btn-color-2"
+            className="btn btn-color-2"
             href={blog.liveDemo}
             target="_blank"
             rel="noopener noreferrer"
@@ -294,15 +316,15 @@ function BlogDetail() {
                       fontStyle: "italic",
                       color: "var(--color-accent)",
                       marginBottom: "0.3rem",
-                      marginLeft: 0, // aligned left without indent
+                      marginLeft: "4rem",
                       fontSize: "1.05rem",
                     }}
                   >
                     Methods
                   </h4>
-                  <ol
+                  <ul
                     style={{
-                      marginLeft: "1.8rem",
+                      marginLeft: "4rem",
                       color: "var(--color-text)",
                       fontSize: "1.07rem",
                       lineHeight: 1.6,
@@ -313,7 +335,7 @@ function BlogDetail() {
                         <strong>{number}.</strong> {text}
                       </li>
                     ))}
-                  </ol>
+                  </ul>
                 </>
               )}
             </div>
