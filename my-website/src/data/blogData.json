@@ -6,49 +6,117 @@
     "previewImg": "/projectimg/website-preview.png",
     "published": "2025-06-15",
     "techStack": "React, Vercel, CSS, UI/UX",
-    "duration": "3 weeks for current MVP, rebuilt from older HTML version",
-
-    "intro": "Rebuilt my old HTML site using React for easier updates and a fresh look.",
+    "duration": "3 weeks for current MVP",
+    "startDate": "2025-07-17",
+    "endDate": "",
+    "intro": "Rebuilding my personal website using React.",
     "introDetail": "Building a new personal website to better showcase my skills and projects. My old static HTML page was hard to maintain, limited in design, and looked outdated. I wanted to apply what I learned from recent semesters to make something modern, with easier content updates and a better personal brand.",
-
-    "goal": "Modernize my site with React and Vercel, mobile friendly, modular.",
+    "goal": "Modernize and improve maintainability.",
     "goalDetail": [
-      "Make a site that’s easy to update, mobile friendly, and visually engaging.",
-      "Learn React best practices and real deployment workflow.",
-      "Switch from static HTML to maintainable, modular code."
+      "1. Make a site that’s easy to update, mobile friendly, and visually engaging.",
+      "2. Learn React best practices and real deployment workflow.",
+      "3. Switch from static HTML to maintainable, modular code."
     ],
-
-    "motivation": "Old site was outdated—needed a portfolio that reflects my growth.",
-    "motivationDetail": "My old static HTML page was hard to maintain, limited in design, and looked outdated. I wanted to apply what I learned from recent semesters to make something modern, with easier content updates and a better personal brand.",
-
+    "motivation": "Upgrade outdated portfolio.",
+    "motivationDetail": "My old static HTML page was deployed before my first semester. I wasn't really know anything about HTML and etc. So i used someone else's template. After learning React, I wanted to rebuild it to reflect my current skills and projects. I also wanted to learn how to deploy a React app properly, using Vercel for hosting.",
     "challenge": "Debugging blank page from a broken icon import, Vercel asset issues.",
-    "challengeDetail": [
-      "Debugging blank pages (broken icon imports, missing assets)",
-      "Vercel deployment quirks (public vs src/assets for images, routing issues)",
-      "State management for theme toggling",
-      "Responsive design on desktop and mobile"
+    "challenges": [
+      {
+        "title": "Debugging Silent Failures",
+        "details": [
+          {
+            "number": 1,
+            "text": "Some bugs were difficult to track down due to lack of console error messages."
+          },
+          {
+            "number": 2,
+            "text": "UI elements not rendering correctly without any exceptions."
+          },
+          {
+            "number": 3,
+            "text": "Broken imports or missing assets causing silent failures."
+          }
+        ],
+        "methods": [
+          {
+            "number": 1,
+            "text": "Use thorough manual UI testing to spot visual issues."
+          },
+          {
+            "number": 2,
+            "text": "Add extensive logging and use breakpoints for runtime inspection."
+          },
+          {
+            "number": 3,
+            "text": "Implement fallback UI and error boundaries in React."
+          }
+        ]
+      },
+      {
+        "title": "Deployment Quirks on Vercel",
+        "details": [
+          "Issues with asset paths between public and src directories.",
+          "Routing errors due to Vercel configuration differences.",
+          "Static assets sometimes not loading correctly."
+        ],
+        "methods": [
+          "Carefully structure assets between public and src folders.",
+          "Use Vercel configuration files to control routing behavior.",
+          "Test deployment thoroughly before final release."
+        ]
+      },
+      {
+        "title": "State Management Challenges",
+        "details": [
+          "Managing theme toggling without causing UI glitches.",
+          "State updates that do not trigger expected re-renders.",
+          "Synchronizing state across components."
+        ],
+        "methods": [
+          "Use React Context or state management libraries like Redux.",
+          "Optimize component rendering with memoization techniques.",
+          "Write unit and integration tests to catch state bugs."
+        ]
+      },
+      {
+        "title": "Ongoing Feature Updates",
+        "details": [
+          "Continuously adding new ideas like dark mode and additional pages.",
+          "Ensuring backward compatibility while adding features.",
+          "Managing technical debt during frequent updates."
+        ],
+        "methods": [
+          "Follow semantic versioning and use feature toggles.",
+          "Keep a comprehensive changelog and documentation.",
+          "Refactor and clean code regularly to manage debt."
+        ]
+      }
     ],
-
     "insights": "React/JSON makes updates fast, deploying motivates better documentation.",
     "insightsDetail": [
       "Building from scratch is much easier with React than old static HTML",
       "Real hosting (Vercel) motivates better code and documentation",
       "JSON-driven content (for blogs, menus, etc.) makes updates much faster"
     ],
-
-    "next": "Add languages, animations, and interactive project demos.",
+    "next": "Add languages, animations, and interactive demos.",
     "nextDetail": [
       "Add multi-language support for global visitors",
       "Improve animations and section transitions",
       "Integrate more interactive elements (e.g., live projects, demo links)"
     ],
-
     "finalThoughts": "Rebuilding my site showed me how far I’ve come as a developer.",
     "finalThoughtsDetail": "Rebuilding my personal website in React (and deploying on Vercel) was the best way to see my own progress as a developer. Now I have a platform that’s easy to maintain, fun to improve, and shows my skills as they grow.",
-
     "links": [
-      { "label": "Source on GitHub", "url": "https://github.com/joywong1228/Personal_Website_With_React" }
-    ]
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/Personal_Website_With_React"
+      },
+      {
+        "label": "Original HTML Version",
+        "url": "https://first-personal-website-nu.vercel.app"
+      }
+    ],
+    "liveDemo": "https://personal-website-with-react-sigma.vercel.app"
   },
   {
     "id": "astro-tracker",
@@ -58,43 +126,64 @@
     "published": "2025-05-22",
     "techStack": "React Native (Expo), react-native-svg, expo-location",
     "duration": "Ongoing (MVP in ~3 days)",
-
+    "startDate": "2025-05-22",
+    "endDate": "",
     "intro": "A simple, offline star map built with React Native and Expo.",
     "introDetail": "AstroTracker is my first step into building a mobile astronomy tool that’s simple, educational, and completely offline. Most stargazing apps feel bloated or locked behind paywalls, so I decided to make my own lightweight, open alternative.",
-
     "goal": "Visualize real stars/constellations using live device location.",
     "goalDetail": [
       "Build a lightweight star map that works offline",
       "Use the device’s location to plot visible stars from Earth",
       "Draw constellations and stars using react-native-svg"
     ],
-
     "motivation": "Wanted a hands-on way to combine coding and astronomy.",
     "motivationDetail": "As someone fascinated by space and new to mobile dev, I wanted a project that blended both. Most apps just dump facts—I wanted to *visualize* the sky, and learn React Native in the process.",
-
     "challenge": "Celestial projection, SVG layout, navigation quirks.",
     "challengeDetail": [
       "RA/Dec projection: Mapping celestial coordinates to 2D screens isn’t trivial",
       "Device location: Permission handling, accuracy, and live rendering"
     ],
-
     "insights": "MVPs are more satisfying, and React Native is powerful.",
     "insightsDetail": [
       "Small, focused MVPs are more satisfying than big, vague ideas",
       "Astronomy data is surprisingly accessible (Hipparcos, Tycho-2 are public!)"
     ],
-
     "next": "Add zoom, constellation lines, camera overlay.",
     "nextDetail": [
       "Dynamic star projection (use time & observer heading)",
       "Zoom and pan controls for SVG sky"
     ],
-
     "finalThoughts": "Already rewarding: code, design, and learning in one project.",
     "finalThoughtsDetail": "AstroTracker is still early, but already a rewarding blend of math, design, and dev. If you’re curious about space, React Native, or just want to follow the stars, this project is for you. ⭐ You don’t need an API key to look at the sky.",
-
     "links": [
-      { "label": "Source on GitHub", "url": "https://github.com/joywong1228/astrotracker" }
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/astrotracker"
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Celestial Projection Challenges",
+        "details": [
+          "Mapping celestial coordinates to 2D screens is complex.",
+          "Requires understanding of RA/Dec and coordinate transformations."
+        ],
+        "methods": [
+          "Use mathematical libraries for astronomical projections.",
+          "Test with real star catalog data to ensure accuracy."
+        ]
+      },
+      {
+        "title": "Location Permission and Accuracy",
+        "details": [
+          "Managing device permission dialogs and fallback UI.",
+          "Handling inaccurate or delayed location data gracefully."
+        ],
+        "methods": [
+          "Request permissions at appropriate times with user context.",
+          "Implement location fallbacks and error states in UI."
+        ]
+      }
     ]
   }
 ]

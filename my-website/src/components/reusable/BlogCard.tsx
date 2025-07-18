@@ -36,7 +36,7 @@ export default function BlogCard({
   const navigate = useNavigate();
 
   return (
-    <div className="blog-card-flex">
+    <div className="blog-card-flex border-shadow">
       {/* Image side */}
       <div className="blog-card-img-wrap">
         <img

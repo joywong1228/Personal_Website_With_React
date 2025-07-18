@@ -167,7 +167,6 @@ function BlogDetail() {
           </span>
         </div>
       </div>
-
       <hr
         style={{
           margin: "2rem 0",
@@ -175,7 +174,59 @@ function BlogDetail() {
           borderTop: "1.3px solid var(--color-border, #e1e8f5)",
         }}
       />
+      {blog.liveDemo && (
+        <section className="border-shadow" style={{ marginBottom: "2rem" }}>
+          <h2
+            style={{
+              color: "var(--color-accent)",
+              fontSize: "1.17rem",
+              fontWeight: 700,
+              margin: "0 0 0.5rem 0",
+            }}
+          >
+            Live Demo
+          </h2>
+          {/* Button linking to live demo */}
+          <a
+            href={blog.liveDemo}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "0.6rem 1.2rem",
+              backgroundColor: "var(--color-accent)",
+              color: "#fff",
+              borderRadius: "9999px",
+              fontWeight: 700,
+              textDecoration: "none",
+              marginBottom: "1rem",
+            }}
+          >
+            Try Live Demo
+          </a>
 
+          {/* Optional: iframe preview (remove if you don't want) */}
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 900,
+              aspectRatio: "16 / 9",
+              borderRadius: "1rem",
+              overflow: "hidden",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+            }}
+          >
+            <iframe
+              src={blog.liveDemo}
+              title="Live Demo Preview"
+              width="100%"
+              height="100%"
+              style={{ border: "none" }}
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
       {/* Sections */}
       <SectionBlock
         label="Introduction"
@@ -191,10 +242,85 @@ function BlogDetail() {
         label="Skills Used"
         value={blog.skillsUsed || blog.skills?.join(", ")}
       />
-      <SectionBlock
-        label="Challenges"
-        value={blog.challengeDetail || blog.challenge}
-      />
+      {blog.challenges && blog.challenges.length > 0 && (
+        <section className="border-shadow">
+          <h2
+            style={{
+              color: "var(--color-accent)",
+              fontSize: "1.17rem",
+              fontWeight: 700,
+              margin: "0 0 0.18rem 0", // consistent margin like other sections
+            }}
+          >
+            Challenges
+          </h2>
+
+          {blog.challenges.map(({ title, details = [], methods = [] }, idx) => (
+            <div key={idx} style={{ marginBottom: "1rem" }}>
+              <h3
+                style={{
+                  color: "var(--color-title)",
+                  marginBottom: "0.3rem",
+                  marginLeft: 0, // aligned left without indent
+                  fontWeight: 700,
+                  fontSize: "1.15rem",
+                }}
+              >
+                {title}
+              </h3>
+
+              {/* Details List */}
+              <ul
+                style={{
+                  marginLeft: "1.35rem",
+                  color: "var(--color-text)",
+                  fontSize: "1.07rem",
+                  lineHeight: 1.6,
+                  marginBottom: methods.length > 0 ? "0.8rem" : "0",
+                }}
+              >
+                {details.map(({ number, text }, i) => (
+                  <li key={i}>
+                    <strong>{number}.</strong> {text}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Methods List */}
+              {methods.length > 0 && (
+                <>
+                  <h4
+                    style={{
+                      fontWeight: 700,
+                      fontStyle: "italic",
+                      color: "var(--color-accent)",
+                      marginBottom: "0.3rem",
+                      marginLeft: 0, // aligned left without indent
+                      fontSize: "1.05rem",
+                    }}
+                  >
+                    Methods
+                  </h4>
+                  <ol
+                    style={{
+                      marginLeft: "1.8rem",
+                      color: "var(--color-text)",
+                      fontSize: "1.07rem",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {methods.map(({ number, text }, i) => (
+                      <li key={i}>
+                        <strong>{number}.</strong> {text}
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              )}
+            </div>
+          ))}
+        </section>
+      )}
       <SectionBlock
         label="Insights"
         value={blog.insightsDetail || blog.insights}
@@ -204,7 +330,6 @@ function BlogDetail() {
         label="Final Thoughts"
         value={blog.finalThoughtsDetail || blog.finalThoughts}
       />
-
       {/* Links */}
       {blog.links && blog.links.length > 0 && (
         <div style={{ margin: "2.5rem 0 1.5rem 0" }}>

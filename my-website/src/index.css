@@ -8,8 +8,8 @@
   --color-nav: #fff;
   --color-btn: #1967d2;
   --color-btn-hover: #124080;
-  --color-border: #e0e7ef;
-}
+  --color-border: #e0e7ef; /* light mode border */
+  --color-shadow: rgba(60, 60, 60, 0.09); /* light mode shadow */}
 
 [data-theme="dark"] {
   --color-bg-for-the-light-button: #201e1e;
@@ -21,9 +21,16 @@
   --color-nav: #181d27;
   --color-btn: #232a3a;
   --color-btn-hover: #363b50;
-  --color-border: #232736;
+  --color-border: #ffffff33; /* white border with some transparency */
+  --color-shadow: rgba(255, 255, 255, 0.15); /* lighter white-ish shadow */
 }
 
+.border-shadow {
+  border: 1.2px solid var(--color-border);
+  border-radius: 1.3rem;
+  box-shadow: 0 8px 24px var(--color-shadow);
+  background: var(--color-bg-alt);
+}
 body {
   font-family: 'Fira Mono', 'Inter', system-ui, monospace, sans-serif;
   background: var(--color-bg);

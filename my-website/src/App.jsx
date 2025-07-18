@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import BlogDetail from "./components/reusable/BlogDetail"; // or adjust path
+import BackToTopButton from "./components/reusable/BackToTopButton";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
       </Routes>
+      <BackToTopButton />
     </Router>
   );
 }

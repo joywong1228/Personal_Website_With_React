@@ -8,10 +8,12 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaLinkedin,
-  FaGithub
+  FaGithub,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import profilePic from "../assets/profile-pic.png";
+import CurrentProjectSection from "./reusable/CurrentProjectSection";
+import UpcomingFeatureSection from "./reusable/UpcomingFeature";
 
 function Profile() {
   const navigate = useNavigate();
@@ -20,13 +22,28 @@ function Profile() {
   const techs = [
     { icon: <FaPython className="icon" />, name: "Python", filter: "python" },
     { icon: <FaReact className="icon" />, name: "React", filter: "react" },
-    { icon: <FaJs className="icon" />, name: "JavaScript", filter: "javascript" },
+    {
+      icon: <FaJs className="icon" />,
+      name: "JavaScript",
+      filter: "javascript",
+    },
     { icon: <FaHtml5 className="icon" />, name: "HTML5", filter: "html" },
     { icon: <FaCss3Alt className="icon" />, name: "CSS3", filter: "css" },
   ];
 
   return (
-    <section id="profile" className="profile-section">
+    <section
+      id="profile"
+      className="profile-section"
+      style={{
+        border: "1.2px solid var(--color-border)",
+        borderRadius: "1.3rem",
+        padding: "2rem",
+        boxShadow: "0 8px 24px rgba(60,60,60,0.06)",
+        background: "var(--color-bg-alt)",
+      }}
+    >
+      {" "}
       <div className="section__pic-container">
         <img src={profilePic} alt="Joy Wong profile" />
       </div>
@@ -34,7 +51,8 @@ function Profile() {
         <p className="section__text__p1">Hello, I'm</p>
         <h1 className="title">Joy Wong</h1>
         <p className="section__text__p2">
-          Software Development Student <span className="dot">•</span> Tech Enthusiast
+          Software Development Student <span className="dot">•</span> Tech
+          Enthusiast
         </p>
         {/* Tech Stack Icons */}
         <div className="tech-stack-icons" style={{ margin: "1.1rem 0" }}>
@@ -59,7 +77,10 @@ function Profile() {
         {/* Quick Stats */}
         <div className="quick-stats">
           <span>
-            <span role="img" aria-label="Calendar">🗓</span> 2+ years coding
+            <span role="img" aria-label="Calendar">
+              🗓
+            </span>{" "}
+            2+ years coding
           </span>
           <span
             className="stats-link"
@@ -67,7 +88,10 @@ function Profile() {
             style={{ cursor: "pointer" }}
             title="See my projects"
           >
-            <span role="img" aria-label="Books">📚</span> 8+ projects
+            <span role="img" aria-label="Books">
+              📚
+            </span>{" "}
+            8+ projects
           </span>
           {/* <span
             className="stats-link"
@@ -113,6 +137,8 @@ function Profile() {
           <span>Currently learning: TypeScript & AI tools</span>
         </div>
       </div>
+      <UpcomingFeatureSection />
+      <CurrentProjectSection />
     </section>
   );
 }
