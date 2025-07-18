@@ -21,13 +21,23 @@ export default function CurrentProjectSection() {
         marginTop: "3rem",
         position: "relative",
         paddingBottom: "4rem",
+        maxWidth: 900,
+        marginLeft: "auto",
+        marginRight: "auto",
+        padding: "0 1rem",
       }}
     >
       <h2 style={{ color: "var(--color-title)", marginBottom: "1rem" }}>
         Current Projects
       </h2>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+        }}
+      >
         {currentProjects.map(({ id, title, intro, skills, previewImg }) => (
           <div
             className="border-shadow"
@@ -48,6 +58,7 @@ export default function CurrentProjectSection() {
               boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
               cursor: "pointer",
               outline: "none",
+              flexWrap: "wrap", // enable wrapping on small screens
             }}
           >
             {previewImg && (
@@ -55,8 +66,9 @@ export default function CurrentProjectSection() {
                 src={previewImg}
                 alt={`${title} preview`}
                 style={{
-                  width: 110,
-                  height: 70,
+                  maxWidth: 110,
+                  width: "100%",
+                  height: "auto",
                   objectFit: "cover",
                   borderRadius: "0.6rem",
                   flexShrink: 0,
@@ -70,13 +82,21 @@ export default function CurrentProjectSection() {
               />
             )}
 
-            <div style={{ flex: 1, minWidth: 0 }}>
+            <div
+              style={{
+                flex: 1,
+                minWidth: 0,
+                minHeight: 70, // match image min height for alignment
+              }}
+            >
               <strong
                 style={{
                   fontSize: "1.1rem",
                   color: "var(--color-title)",
                   display: "block",
                   marginBottom: "0.25rem",
+                  whiteSpace: "normal",
+                  wordBreak: "break-word",
                 }}
               >
                 {title}
@@ -85,9 +105,8 @@ export default function CurrentProjectSection() {
                 style={{
                   fontSize: "0.9rem",
                   color: "var(--color-text)",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  whiteSpace: "normal",
+                  overflowWrap: "break-word",
                   marginBottom: "0.25rem",
                 }}
                 title={intro}
@@ -95,7 +114,13 @@ export default function CurrentProjectSection() {
                 {intro}
               </div>
 
-              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5rem",
+                  flexWrap: "wrap",
+                }}
+              >
                 {skills.map((skill) => (
                   <span
                     className="btn-color-2"
@@ -117,20 +142,22 @@ export default function CurrentProjectSection() {
         ))}
       </div>
 
-      <button
-        className="btn btn-color-1"
-        style={{
-          position: "absolute",
-          bottom: 8,
-          right: 24,
-          fontWeight: 700,
-          letterSpacing: "0.05em",
-          zIndex: 100,
-        }}
-        onClick={() => navigate("/projects")}
-      >
-        View More Projects
-      </button>
+      <div style={{ textAlign: "right", marginTop: "2rem" }}>
+        <button
+          className="btn btn-color-1"
+          style={{
+            position: "absolute",
+            bottom: 16, // add a bit more margin from bottom
+            right: 24,
+            fontWeight: 700,
+            letterSpacing: "0.05em",
+            zIndex: 100,
+          }}
+          onClick={() => navigate("/projects")}
+        >
+          View More Projects
+        </button>
+      </div>
     </section>
   );
 }
