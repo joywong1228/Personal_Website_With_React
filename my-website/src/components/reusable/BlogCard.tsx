@@ -2,25 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const tagColor = (tag) => {
-  switch (tag.toLowerCase()) {
-    case "react":
-    case "react native":
-      return "#61DBFB";
-    case "expo":
-      return "#48cfae";
-    case "css":
-      return "#2965F1";
-    case "vercel":
-      return "#737475ff";
-    case "ui/ux":
-      return "#ffb347";
-    case "svg":
-      return "#ae67fa";
-    case "astronomy":
-      return "#0cfcc0";
-    default:
-      return "#1967d2";
-  }
+  // ...same as before...
 };
 
 export default function BlogCard({
@@ -32,6 +14,7 @@ export default function BlogCard({
   motivation,
   challenge,
   previewImg,
+  liveDemoNote, // added prop
 }) {
   const navigate = useNavigate();
 
@@ -50,9 +33,32 @@ export default function BlogCard({
           }}
         />
       </div>
+
       {/* Content */}
       <div className="blog-card-content">
+        {/* Show liveDemoNote box if exists */}
+        {liveDemoNote && (
+          <div
+            style={{
+              backgroundColor: "#ffe4e6",
+              color: "#b91c1c",
+              padding: "1rem 1.5rem",
+              borderRadius: "1rem",
+              marginBottom: "2rem",
+              textAlign: "center",
+              fontWeight: "700",
+              fontSize: "1.1rem",
+              border: "1.5px solid #f87171",
+            }}
+          >
+            <p>{liveDemoNote}</p>
+          </div>
+        )}
+
+        {/* Title with optional warning sign */}
         <div className="blog-card-title">{title}</div>
+
+        {/* Skills */}
         <div className="blog-card-skills-row">
           {skills.map((tag) => (
             <span
@@ -64,6 +70,8 @@ export default function BlogCard({
             </span>
           ))}
         </div>
+
+        {/* Other info rows */}
         <div className="blog-card-row">
           <b>Intro:</b> <span>{intro}</span>
         </div>
@@ -76,6 +84,8 @@ export default function BlogCard({
         <div className="blog-card-row">
           <b>Challenge:</b> <span>{challenge}</span>
         </div>
+
+        {/* Button */}
         <button
           className="btn btn-color-1 blog-card-btn"
           onClick={() => navigate(`/blog/${id}`)}

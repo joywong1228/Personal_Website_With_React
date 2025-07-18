@@ -63,6 +63,10 @@ export default function CurrentProjectSection() {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                 }}
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.onerror = null; // prevent infinite loop
+                  e.currentTarget.src = "/fallback.jpg"; // fallback image URL
+                }}
               />
             )}
 
