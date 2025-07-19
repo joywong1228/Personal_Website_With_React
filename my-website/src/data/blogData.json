@@ -11,14 +11,17 @@
     "endDate": "",
     "intro": "Rebuilding my personal website using React.",
     "introDetail": "Building a new personal website to better showcase my skills and projects. My old static HTML page was hard to maintain, limited in design, and looked outdated. I wanted to apply what I learned from recent semesters to make something modern, with easier content updates and a better personal brand.",
-    "goal": "Modernize and improve maintainability.",
+    "goal": "Apply Vercel and Firebase",
     "goalDetail": [
       "1. Make a site that’s easy to update, mobile friendly, and visually engaging.",
       "2. Learn React best practices and real deployment workflow.",
-      "3. Switch from static HTML to maintainable, modular code."
+      "3. Switch from static HTML to maintainable, modular code.",
+      "4. Use Vercel for hosting and deployment.",
+      "5. Use Firebase for blog content management.",
+      "6. Implement dark mode and responsive design."
     ],
     "motivation": "Upgrade outdated portfolio.",
-    "motivationDetail": "My old static HTML page was deployed before my first semester. I wasn't really know anything about HTML and etc. So i used someone else's template. After learning React, I wanted to rebuild it to reflect my current skills and projects. I also wanted to learn how to deploy a React app properly, using Vercel for hosting.",
+    "motivationDetail": "My old static HTML page was deployed before my first semester start. I wasn't really know anything about HTML and etc. So i used someone else's template. After learning React, I wanted to rebuild it to reflect my current skills and projects. I also wanted to learn how to deploy a React app properly, using Vercel for hosting and Firebase for dynamic content management.",
     "challenge": "Debugging blank page from a broken icon import, Vercel asset issues.",
     "challenges": [
       {
@@ -34,7 +37,7 @@
           },
           {
             "number": 3,
-            "text": "Broken imports or missing assets causing silent failures."
+            "text": "The page appeared blank after importing the Firebase system. And it is hard to debug because there is no error message"
           }
         ],
         "methods": [
@@ -49,6 +52,10 @@
           {
             "number": 3,
             "text": "Implement fallback UI and error boundaries in React."
+          },
+          {
+            "number": 4,
+            "text": "Add a lot of  try-catch blocks to inspect the console and discovered that the issue was caused by an incorrect icon import."
           }
         ]
       },
@@ -57,15 +64,11 @@
         "details": [
           {
             "number": 1,
-            "text": "Issues with asset paths between public and src directories."
-          },
-          {
-            "number": 2,
             "text": "Routing errors due to Vercel configuration differences."
           },
           {
-            "number": 3,
-            "text": "Static assets sometimes not loading correctly."
+            "number": 2,
+            "text": "The redeployment process was kept falling after adding the firebase system. "
           }
         ],
         "methods": [
@@ -84,33 +87,24 @@
         ]
       },
       {
-        "title": "State Management Challenges",
+        "title": "Firebase Cloud Functions",
         "details": [
           {
             "number": 1,
-            "text": "Managing state across components without causing re-renders."
+            "text": "Firebase configuration keys do not load correctly from .env.local, but work when hardcoded directly in firebase.js."
           },
           {
             "number": 2,
-            "text": "Ensuring theme toggling works smoothly without UI glitches."
+            "text": "Data fetching from Firebase is inconsistent or fails intermittently."
           },
           {
             "number": 3,
-            "text": "Synchronizing state updates across multiple components."
+            "text": "Data fails to save properly to the Firebase cloud database."
           }
         ],
         "methods": [
           {
-            "number": 1,
-            "text": "Use React Context API for global state management."
-          },
-          {
-            "number": 2,
-            "text": "Implement memoization techniques to prevent unnecessary re-renders."
-          },
-          {
-            "number": 3,
-            "text": "Write unit tests to catch state-related bugs early."
+            "text": "Environment variables prefixed with NEXT_PUBLIC_ were not working properly in my setup because Next.js expects those variables to be available at build time, but in my development environment or deployment process, they were not being injected correctly. This caused the Firebase config to be incomplete or undefined, leading to errors. Switching to using VITE_FIREBASE_API_ prefix and accessing variables via import.meta.env.VITE_FIREBASE_API_KEY (a Vite environment variable convention) solved the problem because my project was using Vite or a similar bundler that reads environment variables at runtime through import.meta.env, ensuring proper injection and availability. Also, implement error handling and confirm write permissions in Firestore rules; use transaction or batch writes for reliable cloud saving."
           }
         ]
       },
@@ -643,7 +637,7 @@
   },
   {
     "id": "tc-connect-platform",
-    "title": "TC Connect Platform – Community Hub for Mentorship and Career Growth",
+    "title": "TC Connect Platform – A Community-Driven Tech Mentorship Hub",
     "skills": [
       "Web Development",
       "Responsive Design",
@@ -652,22 +646,28 @@
       "System Analysis"
     ],
     "previewImg": "/projectimg/tcconnect-main.png",
-    "published": "2025-07",
-    "techStack": "React, Node.js, REST APIs, Responsive Web Design",
-    "duration": "Semester-long team project (Phase 2 - Final Analysis and Preliminary Design)",
+    "startDate": "2025-04-05",
+    "techStack": "React, Node.js, REST APIs, Figma",
+    "duration": "Semester-long team project",
     "intro": "TC Connect Platform aims to create a dynamic, web-based platform as a central hub for mentorship, job readiness, startup support, and AI upskilling.",
-    "introDetail": "Designed to connect Advisors, Members, Founders, and Supporters, the platform offers role-specific dashboards, networking, and resources aligned with career and entrepreneurial goals. This project involved detailed analysis, use case and class diagrams, and team collaboration.",
-    "goal": "Develop a responsive platform fostering community-driven growth with features like 1:1 booking, job boards, workshops, discussion forums, and AI-driven course recommendations.",
+    "introDetail": "Designed to connect stakeholders like Advisors, Members, Founders, and Supporters, the platform offers role-specific dashboards, networking, and resources aligned with career and entrepreneurial goals. This project involved detailed analysis, use case and class diagrams, and team collaboration.",
+    "goal": "Develop a responsive platform fostering community-driven growth",
     "goalDetail": [
-      "Create user roles with custom dashboards and profiles",
-      "Integrate booking systems for mentorship sessions",
-      "Support job board with application and filtering features",
-      "Develop event calendar and workshop management",
-      "Include messaging, notifications, and third-party integrations"
+      "Platform System:",
+      "Use Firebase Auth for user roles and dashboards",
+      "Build mentorship booking with Supabase/PostgreSQL",
+      "Power job board with Supabase APIs",
+      "Manage events with Supabase and Firebase Functions",
+      "Handle messaging and notifications via Firebase and secure APIs",
+      "-------------------",
+      "Personal Learning:",
+      "Figma design for responsive UI",
+      "Use case and class diagrams for system analysis",
+      "Gantt Chart for project management"
     ],
-    "motivation": "Build a unified platform to replace fragmented resources and enhance career and learning opportunities in Alberta’s tech community.",
-    "motivationDetail": "The sponsor’s current site lacks user accounts and interactive features. This platform will empower users with personalized experiences and scalable services in mentorship and professional development.",
-    "projectStructure": "Includes use case diagrams, use case descriptions, class and ER diagrams, and a detailed team constitution outlining roles and collaboration norms.",
+    "motivation": "Our first real client project found independently to unify resources and support Alberta’s tech community.",
+    "motivationDetail": "Our first real client project, aimed to replace a limited site lacking accounts and interactivity with a scalable platform for personalized mentorship and career support in Alberta’s tech community.",
+    "projectStructure": "Includes use case diagrams, use case descriptions, class and ER diagrams, and a detailed team constitution outlining roles and collaboration norms. Figma for UI design and project management tools like Gantt charts for task tracking.",
     "skillsUsed": [
       "System analysis and design",
       "Use case and class diagram modeling",
@@ -677,36 +677,40 @@
     ],
     "challenges": [
       {
-        "title": "Complex Role-Based Access",
+        "title": "Limited Time and Resources",
         "details": [
-          "Managing multiple user roles with different permissions",
-          "Ensuring data security and privacy across roles"
+          {
+            "number": 1,
+            "text": "Balancing project scope with semester deadlines and other coursework."
+          },
+          {
+            "number": 2,
+            "text": "Ensuring equal team contributions despite varying skills and availability."
+          }
         ],
         "methods": [
-          "Define clear role hierarchies and data access rules",
-          "Implement authorization mechanisms"
+          { "number": 1, "text": "Prioritizing core features for the MVP." },
+          {
+            "number": 2,
+            "text": "Regular check-ins to track progress and redistribute tasks as needed."
+          },
+          {
+            "number": 3,
+            "text": "Using project management tools like Gantt Chart to visualize timelines and dependencies."
+          }
         ]
       },
       {
-        "title": "Comprehensive Use Case Coverage",
+        "title": "Unclear Requirements",
         "details": [
-          "Detailing all user interactions and error flows",
-          "Balancing system flexibility with clarity"
+          {
+            "text": "The team leader was the sole point of contact with the client, which sometimes led to incomplete or unclear requirements. Because it was a one-person communication channel, the leader couldn’t always anticipate all necessary questions or details. To address this, our team held internal meetings where we collectively reviewed the project scope and discussed ambiguities, allowing us to identify missing information and clarify expectations before proceeding."
+          }
         ],
         "methods": [
-          "Use flowcharts and detailed scenarios",
-          "Regular team reviews and client feedback"
-        ]
-      },
-      {
-        "title": "Team Coordination",
-        "details": [
-          "Distributing tasks among members effectively",
-          "Managing communication and conflict resolution"
-        ],
-        "methods": [
-          "Weekly meetings and status updates",
-          "Defined roles like Leader, Scribe, and Standards Person"
+          {
+            "text": "Held several rounds of discussions within the team to clarify requirements, especially focusing on use case and class diagrams. We ensured all system aspects were covered and, by comparing with similar existing systems, confirmed that all necessary features for proper functionality were included."
+          }
         ]
       }
     ],
@@ -715,12 +719,8 @@
       "Clear communication and role definition enhance team productivity.",
       "System design must balance user needs, security, and scalability."
     ],
-    "next": [
-      "Implementation of the platform based on the analysis and designs.",
-      "Iterative testing with real users and stakeholder feedback.",
-      "Expanding features like AI upskilling and third-party integrations."
-    ],
-    "finalThoughts": "TC Connect Platform is a foundational project combining technical design and teamwork to build a meaningful community tool. The experience deepened understanding of system analysis, user needs, and project collaboration.",
+    "next": ["The real website"],
+    "finalThoughts": "TC Connect Platform provided a valuable learning opportunity to understand client needs clearly while balancing limited meeting time and team coordination challenges. Managing unclear requirements through multiple team discussions helped us align expectations. The project strengthened our skills in system analysis, effective communication, and collaboration under real-world constraints.",
     "teamConstitution": {
       "teamName": "Alberta Connector",
       "members": [
@@ -748,24 +748,19 @@
           "role": "Peace Maker/Mediator",
           "skills": ["Conflict resolution", "Problem analysis"]
         }
-      ],
-      "goals": [
-        "Deliver functional, tested platform meeting client requirements",
-        "Maintain effective communication and equal participation",
-        "Strengthen skills in web and mobile development",
-        "Finish project within the semester timeline"
-      ],
-      "meetingSchedule": ["Wednesday 10am–11am", "Friday 1pm–2pm"],
-      "conflictResolutionPlan": "Stepwise escalation from group discussion to leader decision and instructor involvement if needed."
+      ]
     },
     "links": [
       {
-        "label": "Project PDF (Final Analysis & Design)",
-        "url": "/assets/docs/Phase2_FinalAnalysis_PreliminaryDesign.pdf"
+        "label": "Figma Design",
+        "url": "https://www.figma.com/proto/53McdsBbF1yoeu4ta6bymS/CPSY301-Tech-connect?node-id=185-1132&starting-point-node-id=185%3A1132&t=Xy3rMWNkmMDKpfz4-1"
       }
     ],
     "liveDemo": "https://www.youtube.com/embed/CP5eDr9NSFg",
-    "liveDemoNote": "This project is a semester-long team effort and does not have a live demo yet. This blog is not complete; I am focusing on adding all my projects first, then I will update the blog content."
+    "liveDemoNote": [
+      "This project is a semester-long team effort",
+      "The Figma design demo is at the end of the blog"
+    ]
   },
   {
     "id": "appointment-manager",

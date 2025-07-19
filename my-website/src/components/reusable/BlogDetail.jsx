@@ -192,7 +192,15 @@ function BlogDetail() {
             border: "1.5px solid #f87171",
           }}
         >
-          {blog.liveDemoNote && <p>{blog.liveDemoNote}</p>}
+          {Array.isArray(blog.liveDemoNote) ? (
+            blog.liveDemoNote.map((note, idx) => (
+              <p key={idx} style={{ margin: "0.3rem 0" }}>
+                {note}
+              </p>
+            ))
+          ) : (
+            <p>{blog.liveDemoNote}</p>
+          )}{" "}
         </div>
       )}
       {blog.liveDemo && (
