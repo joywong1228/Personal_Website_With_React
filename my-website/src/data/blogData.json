@@ -176,14 +176,14 @@
     "id": "astro-tracker",
     "title": "AstroTracker – A Minimalist Mobile Star Map",
     "skills": ["React Native", "Expo", "SVG", "Astronomy"],
-    "previewImg": "/assets/project/astro-preview.png",
+    "previewImg": "/projectimg/astrotracker.jpeg",
     "published": "2025-05-22",
     "techStack": "React Native (Expo), react-native-svg, expo-location",
     "duration": "Ongoing (MVP in ~3 days)",
     "startDate": "2025-05-22",
     "endDate": "2025-05-25",
     "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content.",
-
+    "liveDemo": "https://www.youtube.com/embed/W07PNTssnYM",
     "intro": "A simple, offline star map built with React Native and Expo.",
     "introDetail": "AstroTracker is my first step into building a mobile astronomy tool that’s simple, educational, and completely offline. Most stargazing apps feel bloated or locked behind paywalls, so I decided to make my own lightweight, open alternative.",
     "goal": "Visualize real stars/constellations using live device location.",
@@ -246,7 +246,7 @@
     "id": "ai-closet-style",
     "title": "AI Closet Style – GPT-4 Outfit Generator for Fashion Apps",
     "skills": ["Express", "TypeScript", "OpenAI GPT-4 API", "Render", "Expo"],
-    "previewImg": "/projectimg/ai-closet-preview.png",
+    "previewImg": "/projectimg/Ai-closet.jpeg",
     "published": "2025-07-18",
     "techStack": "Express, TypeScript, OpenAI GPT-4 API, Render (backend), Expo (frontend)",
     "duration": "1 week for backend, integrated into ongoing mobile app project",
@@ -329,6 +329,8 @@
         "url": "https://github.com/joywong1228/ai-closet-backend"
       }
     ],
+    "liveDemo": "https://www.youtube.com/embed/msFu_sFXgzs",
+
     "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
   },
   {
@@ -341,7 +343,7 @@
       "AsyncStorage",
       "React Context"
     ],
-    "previewImg": "/assets/project/cancun-menu-preview.png",
+    "previewImg": "/projectimg/cancun.jpeg",
     "published": "(add date)",
     "startDate": "2025-05-01",
     "endDate": "2025-06-01",
@@ -444,6 +446,7 @@
         "url": "https://github.com/joywong1228/cancunmenuapp/pulls"
       }
     ],
+    "liveDemo": "https://www.youtube.com/embed/3nFx6N3RAeE",
     "liveDemoNote": "Sorry, this blog is currently incomplete. I am focusing on adding all my projects first, then I will update the blog content."
   },
   {
@@ -648,7 +651,7 @@
       "Project Management",
       "System Analysis"
     ],
-    "previewImg": "/assets/project/tc-connect-preview.png",
+    "previewImg": "/projectimg/tcconnect-main.png",
     "published": "2025-07",
     "techStack": "React, Node.js, REST APIs, Responsive Web Design",
     "duration": "Semester-long team project (Phase 2 - Final Analysis and Preliminary Design)",
@@ -761,6 +764,7 @@
         "url": "/assets/docs/Phase2_FinalAnalysis_PreliminaryDesign.pdf"
       }
     ],
+    "liveDemo": "https://www.youtube.com/embed/CP5eDr9NSFg",
     "liveDemoNote": "This project is a semester-long team effort and does not have a live demo yet. This blog is not complete; I am focusing on adding all my projects first, then I will update the blog content."
   },
   {

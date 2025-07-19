@@ -223,7 +223,7 @@ function BlogDetail() {
               marginBottom: "1rem",
             }}
           >
-            Try Live Demo
+            View Live Demo
           </a>
 
           {/* Optional: iframe preview (remove if you don't want) */}
