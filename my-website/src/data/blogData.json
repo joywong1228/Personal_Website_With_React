@@ -752,8 +752,12 @@
     },
     "links": [
       {
-        "label": "Figma Design",
+        "label": "Figma Design Demo",
         "url": "https://www.figma.com/proto/53McdsBbF1yoeu4ta6bymS/CPSY301-Tech-connect?node-id=185-1132&starting-point-node-id=185%3A1132&t=Xy3rMWNkmMDKpfz4-1"
+      },
+      {
+        "label": "Cilent's Original Website",
+        "url": "https://techconnect.amgfoundation.ca/"
       }
     ],
     "liveDemo": "https://www.youtube.com/embed/CP5eDr9NSFg",
