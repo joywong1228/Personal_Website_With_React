@@ -59,35 +59,59 @@ const backendSkills = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="exp-section">
-      <h1 className="exp-title">Experience</h1>
-      <div className="exp-cards-row">
-        <SkillBox
-          className="border-shadow"
-          title="Frontend Development"
-          skills={frontendSkills}
-        />
-        <SkillBox title="Backend & DevOps" skills={backendSkills} />
+    <>
+      {" "}
+      <div
+        style={{
+          backgroundColor: "#ffe4e6",
+          color: "#b91c1c",
+          padding: "1rem 1.5rem",
+          borderRadius: "1rem",
+          marginBottom: "2rem",
+          textAlign: "center",
+          fontWeight: "700",
+          fontSize: "1.1rem",
+          border: "1.5px solid #f87171",
+        }}
+      >
+        Each skill icon will link to its most relevant project once this
+        upcoming feature is implemented.
       </div>
-    </section>
+      <section id="experience" className="exp-section">
+        <h1 className="exp-title">Experience</h1>
+        <div className="exp-cards-row">
+          <SkillBox
+            className="border-shadow"
+            title="Frontend Development"
+            skills={frontendSkills}
+          />
+          <SkillBox title="Backend & DevOps" skills={backendSkills} />
+        </div>
+      </section>
+    </>
   );
 }
 
 function SkillBox({ title, skills }) {
   return (
-    <div className="exp-skill-box border-shadow">
-      <h2 className="exp-box-title">{title}</h2>
-      <div className="exp-skill-cards ">
-        {skills.map((skill) => (
-          <div className="exp-skill-card " key={skill.name}>
-            <span className="exp-skill-bigicon" style={{ color: skill.color }}>
-              {skill.icon}
-            </span>
-            <div className="exp-skill-label">{skill.name}</div>
-            <div className="exp-skill-level">{skill.level}</div>
-          </div>
-        ))}
+    <>
+      <div className="exp-skill-box border-shadow">
+        <h2 className="exp-box-title">{title}</h2>
+        <div className="exp-skill-cards ">
+          {skills.map((skill) => (
+            <div className="exp-skill-card " key={skill.name}>
+              <span
+                className="exp-skill-bigicon"
+                style={{ color: skill.color }}
+              >
+                {skill.icon}
+              </span>
+              <div className="exp-skill-label">{skill.name}</div>
+              <div className="exp-skill-level">{skill.level}</div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
