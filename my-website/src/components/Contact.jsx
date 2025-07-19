@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaArrowRight,
 } from "react-icons/fa";
+import CommentSection from "./reusable/CommentSection";
 
 function Contact() {
   return (
@@ -51,6 +52,16 @@ function Contact() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="contact__form">
+        <h3 className="title" style={{ marginTop: "2rem" }}>
+          Leave a Comment
+        </h3>{" "}
+        <p className="section__text__p1">
+          I would love to hear from you! Please leave your email if you want to
+          be contacted.
+        </p>
+        <CommentSection />
       </div>
     </section>
   );
