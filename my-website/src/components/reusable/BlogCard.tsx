@@ -2,7 +2,21 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const tagColor = (tag) => {
-  // ...same as before...
+  switch (tag.toLowerCase()) {
+    case "react":
+      return "#61dafb";
+    case "css":
+      return "#2965F1";
+    case "vercel":
+      return "#e9f0f7ff";
+    case "ui/ux":
+      return "#ffb347";
+    case "svg":
+      return "#ff6347";
+    // ... add more cases as needed
+    default:
+      return "#000000ff"; // fallback color
+  }
 };
 
 export default function BlogCard({
@@ -59,7 +73,7 @@ export default function BlogCard({
         <div className="blog-card-title">{title}</div>
 
         {/* Skills */}
-        <div className="blog-card-skills-row">
+        <div className="blog-card-skills-row ">
           {skills.map((tag) => (
             <span
               key={tag}
