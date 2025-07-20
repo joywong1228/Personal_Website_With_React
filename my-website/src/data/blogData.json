@@ -853,7 +853,7 @@
   },
   {
     "id": "calgary-parking-app",
-    "title": "Calgary Parking – Mobile App for Real-Time Parking Info",
+    "title": "ParkSense – A Real-Time MobileApp",
     "skills": [
       "React Native",
       "Expo",
@@ -861,56 +861,55 @@
       "Geolocation",
       "UI/UX"
     ],
-    "previewImg": "/assets/project/calgary-parking-preview.png",
+    "previewImg": "/projectimg/parksense.png",
     "published": "2025-07-15",
     "techStack": "React Native (Expo), REST APIs, MapView, Location Services",
     "duration": "4 weeks (MVP)",
-    "startDate": "2025-06-20",
+    "startDate": "2025-07-05",
     "endDate": "",
-    "intro": "A mobile app providing real-time parking availability, rates, and navigation across Calgary’s downtown parking lots.",
+    "intro": "A mobile app providing real-time parking availability, rates, and navigation across Calgary parking lots.",
     "introDetail": "This app integrates Calgary’s open parking data APIs with React Native and Expo to show available parking spots, hourly rates, payment options, and operating hours. It helps users find and reserve parking efficiently.",
     "goal": "Build a user-friendly app that shows live parking info with location awareness and filtering.",
     "goalDetail": [
       "Fetch and display parking lot details including available spaces and rates",
       "Allow users to filter lots by price, distance, and features",
       "Integrate maps and navigation to guide users to parking",
-      "Persist user favorites and search history"
+      "API integration for real-time data"
     ],
     "motivation": "Solve the daily frustration of finding parking in a busy city with easy-to-use mobile tools.",
     "motivationDetail": "Parking in downtown Calgary is often frustrating and time-consuming. By leveraging public parking data and mobile tech, I wanted to create a tool that makes parking more accessible and less stressful for locals and visitors.",
     "challenge": "Working with real-time APIs, accurate location handling, and UI responsiveness.",
     "challenges": [
       {
-        "title": "Real-Time Data Handling",
+        "title": "Finding a suitable parking API",
         "details": [
-          "Integrating and caching live parking availability API data.",
-          "Handling network delays and offline scenarios gracefully."
+          "The current open data API for Calgary parking is not well-documented and has limited features, It only provides basic information like lot names, locations, and availability without detailed rates or payment options."
         ],
-        "methods": [
-          "Use React Query or similar for efficient data fetching and caching.",
-          "Implement fallback UI for offline mode."
-        ]
+        "methods": ["Still thinking"]
       },
       {
         "title": "Geolocation and Map Integration",
         "details": [
-          "Ensuring accurate user location tracking and map marker updates.",
-          "Handling permission prompts and fallback when location is denied."
+          "Google Maps API offers comprehensive features but requires payment beyond free tier limits. Alternatives like Mapbox or OpenStreetMap are cost-effective but may have fewer features or less global coverage, so choosing the right API depends on budget and app needs."
         ],
         "methods": [
-          "Use Expo Location and react-native-maps with appropriate permissions.",
-          "Provide manual search and address entry as fallback."
+          "Use Expo Location and react-native-maps with appropriate permissions."
         ]
       },
       {
         "title": "UI Performance and Usability",
         "details": [
-          "Maintaining smooth scrolling and map interactions with large data sets.",
-          "Designing an intuitive filter and favorites system."
+          "Hard to follow what is designed in the Figma because the features sometimes don’t match the actual UI when tested."
         ],
         "methods": [
-          "Optimize FlatList with memoization.",
-          "Keep UI minimal and focused with clear feedback."
+          {
+            "number": 1,
+            "text": "Keep UI minimal and focused with clear feedback."
+          },
+          {
+            "number": 2,
+            "text": "Scarife some features for performance, like live updates every 5 minutes instead of real-time."
+          }
         ]
       }
     ],
@@ -919,32 +918,30 @@
       "Efficient data caching and offline strategies greatly improve user experience.",
       "Minimal and responsive UI design is key for mobile usability."
     ],
-    "next": [
-      "Add parking reservations and payments integration.",
-      "Expand coverage to Calgary suburbs and event-specific parking.",
-      "Implement push notifications for parking spot availability."
-    ],
+    "next": ["Just keep building for now "],
     "finalThoughts": "Building Calgary Parking app was a rewarding challenge blending real-world data with user-centered mobile design. It’s a solid base for expanding smart city apps.",
     "links": [
       {
-        "label": "Source Code on GitHub",
-        "url": "https://github.com/joywong1228/calgary-parking-app"
+        "label": "Figma Preview",
+        "url": "https://www.figma.com/proto/V6s4JXmihbHNh16BA7E8nO/Mobile-parking-app?node-id=66-114&p=f&t=V2pPhDcQ3fwCVjgc-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=66%3A114"
       }
     ],
     "liveDemoNote": "App is in MVP stage with real-time parking data but no payment or reservation features yet."
   },
   {
     "id": "movie-database-web",
-    "title": "Movie Database – React App with Firebase Auth & Movie UI",
+    "title": "Movie Database",
     "skills": ["React", "Next.js", "Tailwind CSS", "Firebase Auth", "UI/UX"],
     "previewImg": "/assets/project/movie-db-preview.png",
     "published": "2025-07-15",
     "techStack": "Next.js 14, Firebase Authentication, Tailwind CSS, React State Management",
     "duration": "3 weeks for initial MVP",
-    "startDate": "2025-06-20",
+    "startDate": "2025-07-15",
     "endDate": "",
     "intro": "A modern movie browsing web app built with React and Next.js, including Google login, search, and responsive movie UI.",
-    "introDetail": "This project provides a Netflix-style UI with movie rows, a banner, and login system. It’s designed to show how modern front-end frameworks, auth systems, and component reuse can combine into a clean entertainment web interface.",
+    "introDetail": [
+      "This project provides a Netflix-style UI with movie rows, a banner, and login system. It’s designed to show how modern front-end frameworks, auth systems, and component reuse can combine into a clean entertainment web interface."
+    ],
     "goal": "Practice React componentization and integrate Firebase Auth with a clean UI.",
     "goalDetail": [
       "Build reusable components like MovieCard, MovieRow, Banner, and NavBar",
@@ -1001,12 +998,9 @@
       "Make banners dynamic with trailers or overviews"
     ],
     "finalThoughts": "This app was an effective playground for mastering state, layout, and auth in a single page React app. It’s both functional and visually impressive for portfolio showcase.",
-    "links": [
-      {
-        "label": "Source Code on GitHub",
-        "url": "https://github.com/joywong1228/movie-database-app"
-      }
-    ],
-    "liveDemoNote": "This app is still under development and hosted locally. I will deploy it and update the live demo link soon."
+    "liveDemoNote": [
+      "This app is still under development and hosted locally.",
+      "I will deploy it and update the live demo link soon."
+    ]
   }
 ]

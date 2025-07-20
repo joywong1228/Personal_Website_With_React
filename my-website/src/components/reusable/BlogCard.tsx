@@ -65,7 +65,15 @@ export default function BlogCard({
               border: "1.5px solid #f87171",
             }}
           >
-            <p>{liveDemoNote}</p>
+            {Array.isArray(liveDemoNote) ? (
+              liveDemoNote.map((note, idx) => (
+                <p key={idx} style={{ margin: "0.3rem 0" }}>
+                  {note}
+                </p>
+              ))
+            ) : (
+              <p>{liveDemoNote}</p>
+            )}
           </div>
         )}
 

@@ -298,54 +298,120 @@ function BlogDetail() {
                 {title}
               </h3>
 
-              {/* Details List */}
-              <ul
-                style={{
-                  marginLeft: "1.35rem",
-                  color: "var(--color-text)",
-                  fontSize: "1.07rem",
-                  lineHeight: 1.6,
-                  marginBottom: methods.length > 0 ? "0.8rem" : "0",
-                }}
-              >
-                {details.map(({ number, text }, i) => (
-                  <li key={i}>
-                    <strong>{number}.</strong> {text}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Methods List */}
-              {methods.length > 0 && (
-                <>
-                  <h4
-                    style={{
-                      fontWeight: 700,
-                      fontStyle: "italic",
-                      color: "var(--color-accent)",
-                      marginBottom: "0.3rem",
-                      marginLeft: "4rem",
-                      fontSize: "1.05rem",
-                    }}
-                  >
-                    Methods
-                  </h4>
-                  <ul
-                    style={{
-                      marginLeft: "4rem",
-                      color: "var(--color-text)",
-                      fontSize: "1.07rem",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {methods.map(({ number, text }, i) => (
+              <>
+                {/* Details List */}
+                <ul
+                  style={{
+                    marginLeft: "1.35rem",
+                    color: "var(--color-text)",
+                    fontSize: "1.07rem",
+                    lineHeight: 1.6,
+                    marginBottom: methods.length > 0 ? "0.8rem" : "0",
+                  }}
+                >
+                  {details
+                    .filter(
+                      (d) =>
+                        typeof d === "object" &&
+                        d !== null &&
+                        d.number !== undefined &&
+                        d.text !== undefined
+                    )
+                    .map((d, i) => (
                       <li key={i}>
-                        <strong>{number}.</strong> {text}
+                        <strong>{d.number}.</strong> {d.text}
                       </li>
                     ))}
-                  </ul>
-                </>
-              )}
+                </ul>
+
+                {details
+                  .filter(
+                    (d) =>
+                      typeof d === "string" ||
+                      (typeof d === "object" &&
+                        d.text !== undefined &&
+                        d.number === undefined)
+                  )
+                  .map((d, i) => (
+                    <p
+                      key={"p" + i}
+                      style={{
+                        marginBottom: 8,
+                        marginLeft: "1.35rem",
+                        color: "var(--color-text)",
+                        fontSize: "1.07rem",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {typeof d === "string" ? d : d.text}
+                    </p>
+                  ))}
+
+                {/* Methods List */}
+                {methods.length > 0 && (
+                  <>
+                    <h4
+                      style={{
+                        fontWeight: 700,
+                        fontStyle: "italic",
+                        color: "var(--color-accent)",
+                        marginBottom: "0.3rem",
+                        marginLeft: "4rem",
+                        fontSize: "1.05rem",
+                      }}
+                    >
+                      Methods
+                    </h4>
+
+                    <ul
+                      style={{
+                        marginLeft: "4rem",
+                        color: "var(--color-text)",
+                        fontSize: "1.07rem",
+                        lineHeight: 1.6,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {methods
+                        .filter(
+                          (m) =>
+                            typeof m === "object" &&
+                            m !== null &&
+                            m.number !== undefined &&
+                            m.text !== undefined
+                        )
+                        .map(({ number, text }, i) => (
+                          <li key={i}>
+                            <strong>{number}.</strong> {text}
+                          </li>
+                        ))}
+                    </ul>
+
+                    {methods
+                      .filter(
+                        (m) =>
+                          typeof m === "string" ||
+                          (typeof m === "object" &&
+                            m.text !== undefined &&
+                            m.number === undefined)
+                      )
+                      .map((m, i) => (
+                        <p
+                          key={"pm" + i}
+                          style={{
+                            marginBottom: 8,
+                            marginLeft: "4rem",
+                            color: "var(--color-text)",
+                            fontSize: "1.07rem",
+                            lineHeight: 1.6,
+                          }}
+                        >
+                          {typeof m === "string" ? m : m.text}
+                        </p>
+                      ))}
+                  </>
+                )}
+              </>
             </div>
           ))}
         </section>

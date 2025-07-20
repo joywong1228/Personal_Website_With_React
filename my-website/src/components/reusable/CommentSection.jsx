@@ -47,7 +47,11 @@ export default function CommentSection() {
   };
 
   return (
-    <section id="comments" style={{ maxWidth: 600, margin: "auto" }}>
+    <section
+      className="border-shadow"
+      id="comments"
+      style={{ maxWidth: 600, margin: "auto" }}
+    >
       <h2>Comments</h2>
       <p>Please leave your email if you want to be contacted.</p>
       <form onSubmit={handleSubmit}>
