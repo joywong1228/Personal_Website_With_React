@@ -1002,5 +1002,127 @@
       "This app is still under development and hosted locally.",
       "I will deploy it and update the live demo link soon."
     ]
+  },
+  {
+    "id": "signup-auth-enhancements",
+    "title": "Simply Sign-up and Landign App",
+    "skills": [
+      "React Native",
+      "Expo",
+      "Authentication",
+      "UX/UI",
+      "Firebase",
+      "Supabase"
+    ],
+    "published": "2025-07-19",
+    "liveDemo": "https://www.youtube.com/embed/NSwx5qn3ARw",
+    "techStack": "React Native (Expo), Firebase Auth, Supabase, React Navigation",
+    "duration": "1 week",
+    "startDate": "2025-07-17",
+    "endDate": "2025-07-19",
+    "previewImg": "/projectimg/signup.png",
+    "intro": "Created a completely functional sign-up and authentication app with improved UX and bug fixes.",
+    "goal": "Fix key UX issues in sign-up and authentication process, improve session handling, and enhance UI responsiveness.",
+    "motivation": "It is a class assignemnt",
+    "challenges": [
+      {
+        "title": "My Thoughts",
+        "details": [
+          "At first, I thought this assignment would be easy, but it turned out to be much more challenging than expected. I needed to configure Supabase security rules properly to allow database fetching. Although I set the insert rule correctly, I forgot to add the fetch rule, which caused me to spend an entire day debugging.",
+          "Additionally, several small UI issues were initially overlooked, such as needing the keyboard to dismiss when tapping outside inputs, and ensuring the screen remains fully visible when the keyboard is open."
+        ]
+      },
+      {
+        "title": "Keyboard and Layout Handling",
+        "details": [
+          "App layout did not adjust properly when keyboard opened, blocking input fields."
+        ],
+        "methods": [
+          "Added KeyboardAvoidingView and ScrollView to manage keyboard overlay.",
+          "Implemented tap-to-dismiss keyboard behavior."
+        ]
+      },
+      {
+        "title": "Password Visibility and Input UX",
+        "details": [
+          "Password input lacked visibility toggle causing user frustration.",
+          "Form submission feedback was unclear."
+        ],
+        "methods": [
+          "Added password show/hide toggle icon.",
+          "Updated success alert with explicit “Yes” and “Stay” options."
+        ]
+      },
+      {
+        "title": "Session and Routing Fixes",
+        "details": [
+          "Auto-login after sign-up created confusion.",
+          "Landing page did not fetch user full name properly."
+        ],
+        "methods": [
+          "Forced sign-out after sign-up to prevent auto-login.",
+          "Refined session check logic and routing for /signin and /landing routes.",
+          "Pulled full name from user_details table and displayed on landing screen."
+        ]
+      }
+    ],
+
+    "finalThoughts": "This update significantly improved the authentication experience by addressing critical UI bugs and session management issues, making the app more polished and user-friendly.",
+    "links": [
+      {
+        "label": "Source Code on GitHub",
+        "url": "https://github.com/joywong1228/Mobile-Assignment-4"
+      }
+    ]
+  },
+  {
+    "id": "head-up-game",
+    "title": "Head Up – Hong Kong Version",
+    "skills": ["React Native", "Expo", "Game Logic", "UI/UX"],
+    "previewImg": "/projectimg/head-up.png",
+    "published": "2025-07-21",
+    "techStack": "React Native (Expo), JavaScript",
+    "duration": "2 day",
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-21",
+    "intro": "A mobile game where players guess words displayed on their forehead by reading clues from friends.",
+    "introDetail": "Head Up is a fun, social guessing game inspired by the classic party game. Players hold their device to their forehead to see a word or phrase while friends give hints to help them guess correctly before time runs out.",
+    "goal": "Build an interactive and intuitive game experience leveraging React Native and Expo.",
+    "goalDetail": [
+      "Implement a timer and score tracking system.",
+      "Design a simple, clean UI for gameplay and navigation.",
+      "Allow easy word category selection.",
+      "Handle game start, pause, and end states."
+    ],
+    "motivation": "During a family gathering in Canada, I realized many words were unfamiliar to me as a Hong Konger, so I wanted to create an app that feels personal and relatable.",
+    "motivationDetail": "While spending time with my family in Canada, I noticed that, as someone from Hong Kong, there were many words and phrases I didn’t know or understand. This inspired me to build an app tailored for people like us—something familiar, fun, and meaningful that connects our shared experiences.",
+    "challenges": [
+      {
+        "title": "My Thoughts",
+        "details": [
+          "This project turned out to be relatively straightforward compared to others, as I was able to reference and build upon an existing version of the Head Up game. While it didn’t present many unique challenges, this allowed me to focus on understanding the core mechanics and improving my implementation skills."
+        ]
+      }
+    ],
+    "insights": "React Native provides a fast and flexible platform for simple game development with native feel.",
+    "insightsDetail": [
+      "Using React hooks makes timer and state handling straightforward.",
+      "A minimalist UI helps keep gameplay focused and accessible.",
+      "Testing on real devices uncovered UI tweaks needed for usability."
+    ],
+    "next": [
+      "Add multiplayer support via Bluetooth or internet.",
+      "Include more word categories and difficulty levels.",
+      "Implement sound effects and animations for better feedback."
+    ],
+    "finalThoughts": "Building Head Up was a rewarding experience that combined UI design, game logic, and React Native skills. It’s a fun app to play with friends and a solid foundation for more complex game features.",
+    "finalThoughtsDetail": "This project enhanced my understanding of React Native fundamentals and firebase cloud, while creating a delightful user experience. I’m excited to continue expanding its features and polish.",
+    "links": [
+      {
+        "label": "Source on GitHub",
+        "url": "https://github.com/joywong1228/heas_up_hong_kong_version"
+      }
+    ],
+    "liveDemo": "https://heas-up-hong-kong-version.vercel.app"
   }
 ]

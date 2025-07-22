@@ -20,10 +20,10 @@ export default function Blog() {
         break;
       case "endDate":
         sorted.sort((a, b) => {
-          if (!a.endDate && b.endDate) return -1;
-          if (a.endDate && !b.endDate) return 1;
-          if (!a.endDate && !b.endDate) return 0;
-          return new Date(a.endDate) - new Date(b.endDate);
+          if (!a.endDate && !b.endDate) return 0; // both empty => equal
+          if (!a.endDate) return -1; // a empty => a goes first
+          if (!b.endDate) return 1; // b empty => b goes first
+          return new Date(b.endDate) - new Date(a.endDate); // descending order
         });
         break;
       case "alphabetical":
