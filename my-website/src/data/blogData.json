@@ -932,7 +932,7 @@
     "id": "movie-database-web",
     "title": "Movie Database",
     "skills": ["React", "Next.js", "Tailwind CSS", "Firebase Auth", "UI/UX"],
-    "previewImg": "/assets/project/movie-db-preview.png",
+    "previewImg": "/projectimg/movie.png",
     "published": "2025-07-15",
     "techStack": "Next.js 14, Firebase Authentication, Tailwind CSS, React State Management",
     "duration": "3 weeks for initial MVP",
@@ -998,10 +998,7 @@
       "Make banners dynamic with trailers or overviews"
     ],
     "finalThoughts": "This app was an effective playground for mastering state, layout, and auth in a single page React app. It’s both functional and visually impressive for portfolio showcase.",
-    "liveDemoNote": [
-      "This app is still under development and hosted locally.",
-      "I will deploy it and update the live demo link soon."
-    ]
+    "liveDemo": "https://movie-database-ten-tau.vercel.app/"
   },
   {
     "id": "signup-auth-enhancements",
@@ -1078,7 +1075,15 @@
   {
     "id": "head-up-game",
     "title": "Head Up – Hong Kong Version",
-    "skills": ["React Native", "Expo", "Game Logic", "UI/UX"],
+    "skills": [
+      "React Native",
+      "Expo",
+      "Game Logic",
+      "UI/UX",
+      "Firebase",
+      "Real-Time Database",
+      "Admin Tools"
+    ],
     "previewImg": "/projectimg/head-up.png",
     "published": "2025-07-21",
     "techStack": "React Native (Expo), JavaScript",
